@@ -1,0 +1,9 @@
+#signatureFrame {
+  border-style: groove;
+}
+
+.docs {
+  margin: 10px 10px 10px 10px;
+  font-size: 14px;
+  color: #bbb;
+}

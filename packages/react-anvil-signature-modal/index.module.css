@@ -1,0 +1,68 @@
+.modalContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #d8d8d8;
+  background: #fbfbfb;
+  z-index: 9999;
+}
+
+.modalBackdrop {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 9998;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.deleteIcon {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+.deleteIcon :hover {
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+#signatureFrame {
+  border-style: groove;
+}
+
+.docs {
+  margin: 10px 10px 10px 10px;
+  font-size: 14px;
+  color: #bbb;
+}
+
+.spinner {
+  border-top: 4px solid rgba('black', 0.1);
+  border-right: 4px solid rgba('black', 0.1);
+  border-bottom: 4px solid rgba('black', 0.1);
+  border-left: 4px solid #F83877;
+  position: fixed;
+  top: 48.5%;
+  left: 48.5%;
+  transform: translate(-50%, -50%);
+  animation: spinSpinner 1.2s infinite linear;
+}
+.spinner :after {
+  border-radius: 50%;
+    width: 28px;
+    height: 28px;
+}
+
+@keyframes spinSpinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
