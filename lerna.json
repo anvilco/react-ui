@@ -2,6 +2,11 @@
   "packages": [
     "packages/*"
   ],
+  "command": {
+    "publish" : {
+      "registry": "https://registry.npmjs.org"
+    }
+  },
   "version": "independent",
   "npmClient": "yarn",
   "useWorkspaces": true

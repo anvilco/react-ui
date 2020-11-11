@@ -7,6 +7,10 @@
   "homepage": "https://github.com/anvilco/react-anvil#readme",
   "author": "Anvil Foundry Inc.",
   "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "@anvilco:registry": "https://registry.npmjs.org"
+  },
   "engines": {
     "node": ">=10.0.0"
   },
