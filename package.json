@@ -1,23 +1,30 @@
 {
-  "name": "@anvilco/react-anvil",
+  "name": "@anvilco/react-ui",
   "version": "1.0.0",
   "description": "React UI components for Anvil",
-  "main": "index.js",
-  "repository": "https://github.com/anvilco/react-anvil",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anvilco/react-anvil.git"
+  },
   "homepage": "https://github.com/anvilco/react-anvil#readme",
+  "bugs": {
+    "url": "https://github.com/anvilco/react-anvil#issues"
+  },
   "author": "Anvil Foundry Inc.",
   "license": "MIT",
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org",
-    "@anvilco:registry": "https://registry.npmjs.org"
-  },
-  "engines": {
-    "node": ">=10.0.0"
-  },
   "scripts": {
     "lint": "yarn eslint 'packages/**/*.js'"
   },
-  "private": true,
+  "keywords": [
+    "signature",
+    "documents",
+    "pdf",
+    "iframe",
+    "modal",
+    "etch",
+    "sign"
+  ],
   "dependencies": {},
   "devDependencies": {
     "babel-eslint": "^10.1.0",
