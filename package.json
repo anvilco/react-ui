@@ -7,7 +7,8 @@
   "scripts": {
     "lint": "yarn eslint 'packages/*/src/**.js'",
     "prebuild": "git clean -fdx packages -e packages/*/node_modules",
-    "build": "yarn lerna run build"
+    "build": "yarn lerna run build",
+    "publish": "yarn build && yarn lerna run publish"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
@@ -28,6 +29,9 @@
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
     "lerna": "^3.22.1",
+    "prop-types": "^15.6.0",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
     "style-loader": "^2.0.0",
     "webpack": "^5.4.0",
     "webpack-cli": "^4.2.0"
