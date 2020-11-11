@@ -1,8 +1,13 @@
 {
-  "name": "@anvilco/react-signature-frame",
+  "name": "@anvilco/react-signature-modal",
   "version": "1.0.1-alpha.0",
-  "description": "The AnvilSignatureFrame React component for embedded Etch signatures",
-  "main": "index.js",
+  "description": "The AnvilSignatureModal React component for embedded Etch signatures",
+  "author": "Anvil Foundry Inc.",
+  "license": "MIT",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "webpack --mode production"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/anvilco/react-anvil.git"
@@ -11,8 +16,6 @@
   "bugs": {
     "url": "https://github.com/anvilco/react-anvil/issues"
   },
-  "author": "Anvil Foundry Inc.",
-  "license": "MIT",
   "publishConfig": {
     "registry": "https://registry.npmjs.org",
     "@anvilco:registry": "https://registry.npmjs.org"
@@ -21,7 +24,7 @@
     "signature",
     "documents",
     "pdf",
-    "iframe"
+    "modal"
   ],
   "dependencies": {
     "prop-types": "^15.7.2",
