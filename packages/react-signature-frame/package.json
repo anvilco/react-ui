@@ -26,6 +26,11 @@
     "pdf",
     "iframe"
   ],
+  "dependencies": {
+    "prop-types": "^15.6.0",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  },
   "peerDependencies": {
     "prop-types": "^15.6.0",
     "react": "^16.8.0",
