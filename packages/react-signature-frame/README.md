@@ -4,7 +4,7 @@ A very minimal component that handles the signing process lifecycle.
 
 ## Usage:
 ```js
-import AnvilSignatureFrame from 'react-anvil-signature-frame'
+import AnvilSignatureFrame from '@anvilco/react-signature-frame'
 
 <AnvilSignatureFrame
   signURL={signURL}

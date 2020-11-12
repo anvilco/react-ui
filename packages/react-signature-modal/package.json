@@ -1,5 +1,5 @@
 {
-  "name": "react-anvil-signature-modal",
+  "name": "@anvilco/react-signature-modal",
   "version": "1.0.5-alpha.0",
   "description": "The AnvilSignatureModal React component for embedded Etch signatures",
   "author": "Anvil Foundry Inc.",
@@ -10,11 +10,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anvilco/react-anvil.git"
+    "url": "git+https://github.com/anvilco/react-ui.git"
   },
-  "homepage": "https://github.com/anvilco/react-anvil#readme",
+  "homepage": "https://github.com/anvilco/react-ui#readme",
   "bugs": {
-    "url": "https://github.com/anvilco/react-anvil/issues"
+    "url": "https://github.com/anvilco/react-ui/issues",
+    "email": "support@useanvil.com"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org",

@@ -4,7 +4,7 @@ A modal component that handles the signing process lifecycle. Compatible with mo
 
 ## Usage:
 ```js
-import AnvilSignatureModal from 'react-anvil-signature-modal'
+import AnvilSignatureModal from '@anvilco/react-signature-modal'
 
 <AnvilSignatureModal
   signURL={signURL}
