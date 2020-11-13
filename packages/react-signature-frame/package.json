@@ -1,6 +1,6 @@
 {
   "name": "@anvilco/react-signature-frame",
-  "version": "1.0.5-alpha.0",
+  "version": "1.0.0",
   "description": "The AnvilSignatureFrame React component for embedded Etch signatures",
   "author": "Anvil Foundry Inc.",
   "license": "MIT",

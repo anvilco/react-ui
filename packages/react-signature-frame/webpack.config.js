@@ -35,7 +35,7 @@ module.exports = {
     extensions: ['*', '.js', '.jsx'],
   },
   externals: {
-    // Don't bundle react or react-dom      
+    // Don't bundle react or react-dom
     react: {
       commonjs: 'react',
       commonjs2: 'react',
