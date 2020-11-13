@@ -1,6 +1,6 @@
 {
   "name": "@anvilco/react-signature-frame",
-  "version": "1.2.0",
+  "version": "0.0.0",
   "description": "The AnvilSignatureFrame React component for embedded Etch signatures",
   "author": "Anvil Foundry Inc.",
   "license": "MIT",
@@ -37,5 +37,5 @@
     "react": "^16.8.0",
     "react-dom": "^16.8.0"
   },
-  "gitHead": "f258ca378bdec249c327bc8edc6e557c5afd2aaa"
+  "gitHead": "d78f954e8fa1ddd9121fb27442fb4657fdd7b902"
 }
