@@ -4,7 +4,7 @@
   "description": "The AnvilSignatureFrame React component for embedded Etch signatures",
   "author": "Anvil Foundry Inc.",
   "license": "MIT",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "webpack --mode production",
     "pack": "yarn pack"

@@ -7,7 +7,7 @@
     "lint": "yarn eslint 'packages/*/src/**.js'",
     "prebuild": "git clean -fdx packages -e packages/*/node_modules",
     "build": "yarn lerna run build",
-    "release:local": "yarn lerna run pack",
+    "release:local": "yarn build && yarn lerna run pack",
     "release:npm": "yarn build && yarn lerna publish"
   },
   "devDependencies": {
