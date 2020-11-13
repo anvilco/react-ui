@@ -12,19 +12,20 @@ function AnvilSignatureFrame ({ signURL, scroll, onLoad, onFinish, width, height
       if (origin !== ANVIL_URL) return
       onFinish(url)
     }
-    window.addEventListener('message', handleSignFinish)
-    if (scroll) iframeRef.current.scrollIntoView({ behavior: scroll })
-    return function cleanup () {
-      window.removeEventListener('message', handleSignFinish)
+    if (signURL) {
+      window.addEventListener('message', handleSignFinish)
+      if (scroll) iframeRef.current.scrollIntoView({ behavior: scroll })
+      return () => window.removeEventListener('message', handleSignFinish)
     }
-  }, [])
+  }, [signURL])
 
+  if (!signURL) return null
   return (
     <iframe
       id={styles.signatureFrame}
       src={signURL}
-      name="Anvil E-Signatures"
-      title="Anvil E-Signatures"
+      name="Anvil Etch E-Sign"
+      title="Anvil Etch E-Sign"
       width={width}
       height={height}
       onLoad={onLoad}
@@ -42,7 +43,7 @@ AnvilSignatureFrame.defaultProps = {
 }
 
 AnvilSignatureFrame.propTypes = {
-  signURL: PropTypes.string.isRequired,
+  signURL: PropTypes.string,
   scroll: PropTypes.string,
   onLoad: PropTypes.func,
   onFinish: PropTypes.func,

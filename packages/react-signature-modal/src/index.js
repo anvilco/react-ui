@@ -7,19 +7,17 @@ const ANVIL_URL = 'http://app.useanvil.com'
 
 function AnvilSignatureModal ({ signURL, isOpen, onClose, onLoad, onFinish, width, height }) {
   useEffect(() => {
-    if (isOpen) {
-      function handleSignFinish ({ origin, data: url }) {
-        if (origin !== ANVIL_URL) return
-        onFinish(url)
-      }
-      window.addEventListener('message', handleSignFinish)
-      return function cleanup () {
-        window.removeEventListener('message', handleSignFinish)
-      }
+    function handleSignFinish ({ origin, data: url }) {
+      if (origin !== ANVIL_URL) return
+      onFinish(url)
     }
-  }, [isOpen])
+    if (isOpen && signURL) {
+      window.addEventListener('message', handleSignFinish)
+      return () => window.removeEventListener('message', handleSignFinish)
+    }
+  }, [isOpen, signURL])
 
-  if (!isOpen) return null
+  if (!isOpen || !signURL) return null
   return (
     <>
       <div className={styles.modalContainer}>
@@ -52,7 +50,7 @@ AnvilSignatureModal.defaultProps = {
 }
 
 AnvilSignatureModal.propTypes = {
-  signURL: PropTypes.string.isRequired,
+  signURL: PropTypes.string,
   isOpen: PropTypes.bool,
   onClose: PropTypes.func.isRequired,
   onLoad: PropTypes.func,
