@@ -36,6 +36,5 @@
     "prop-types": "^15.6.0",
     "react": "^16.8.0",
     "react-dom": "^16.8.0"
-  },
-  "gitHead": "48f1f1a4170038e71bd17a083e771f744a5e67ab"
+  }
 }
