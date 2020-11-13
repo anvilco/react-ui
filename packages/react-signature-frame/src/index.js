@@ -2,24 +2,21 @@ import React, { useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import styles from './index.module.css'
 
-const ANVIL_URL = 'http://app.useanvil.com'
+const ANVIL_URLS = ['https://app.useanvil.com', 'https://staging.useanvil.com']
 
 function AnvilSignatureFrame ({ signURL, scroll, onLoad, onFinish, width, height }) {
   const iframeRef = useRef(null)
 
   useEffect(() => {
     function handleSignFinish ({ origin, data: url }) {
-      if (origin !== ANVIL_URL) return
+      if (!ANVIL_URLS.includes(origin)) return
       onFinish(url)
     }
-    if (signURL) {
-      window.addEventListener('message', handleSignFinish)
-      if (scroll) iframeRef.current.scrollIntoView({ behavior: scroll })
-      return () => window.removeEventListener('message', handleSignFinish)
-    }
-  }, [signURL])
+    window.addEventListener('message', handleSignFinish)
+    if (scroll) iframeRef.current.scrollIntoView({ behavior: scroll })
+    return () => window.removeEventListener('message', handleSignFinish)
+  }, [])
 
-  if (!signURL) return null
   return (
     <iframe
       id={styles.signatureFrame}
@@ -43,7 +40,7 @@ AnvilSignatureFrame.defaultProps = {
 }
 
 AnvilSignatureFrame.propTypes = {
-  signURL: PropTypes.string,
+  signURL: PropTypes.string.isRequired,
   scroll: PropTypes.string,
   onLoad: PropTypes.func,
   onFinish: PropTypes.func,
