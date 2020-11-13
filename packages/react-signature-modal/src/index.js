@@ -8,10 +8,14 @@ const ANVIL_URL = 'http://app.useanvil.com'
 function AnvilSignatureModal ({ signURL, isOpen, onClose, onLoad, onFinish, width, height }) {
   useEffect(() => {
     if (isOpen) {
-      window.addEventListener('message', ({ origin, data: url }) => {
+      function handleSignFinish ({ origin, data: url }) {
         if (origin !== ANVIL_URL) return
         onFinish(url)
-      })
+      }
+      window.addEventListener('message', handleSignFinish)
+      return function cleanup () {
+        window.removeEventListener('message', handleSignFinish)
+      }
     }
   }, [isOpen])
 

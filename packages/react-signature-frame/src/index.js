@@ -5,14 +5,18 @@ import styles from './index.module.css'
 const ANVIL_URL = 'http://app.useanvil.com'
 
 function AnvilSignatureFrame ({ signURL, scroll, onLoad, onFinish, width, height }) {
-  const myRef = useRef(null)
+  const iframeRef = useRef(null)
 
   useEffect(() => {
-    window.addEventListener('message', ({ origin, data: url }) => {
+    function handleSignFinish ({ origin, data: url }) {
       if (origin !== ANVIL_URL) return
       onFinish(url)
-    })
-    if (scroll) myRef.current.scrollIntoView({ behavior: scroll })
+    }
+    window.addEventListener('message', handleSignFinish)
+    if (scroll) iframeRef.current.scrollIntoView({ behavior: scroll })
+    return function cleanup () {
+      window.removeEventListener('message', handleSignFinish)
+    }
   }, [])
 
   return (
@@ -24,7 +28,7 @@ function AnvilSignatureFrame ({ signURL, scroll, onLoad, onFinish, width, height
       width={width}
       height={height}
       onLoad={onLoad}
-      ref={myRef}
+      ref={iframeRef}
     >
       <p className={styles.docs}>Your browser does not support iframes.</p>
     </iframe>
@@ -32,7 +36,6 @@ function AnvilSignatureFrame ({ signURL, scroll, onLoad, onFinish, width, height
 }
 
 AnvilSignatureFrame.defaultProps = {
-  scroll: 'auto',
   onFinish: (url) => window.location.assign(url),
   width: 900,
   height: 1100,
