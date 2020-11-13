@@ -33,10 +33,6 @@ module.exports = {
       'node_modules',
     ],
     extensions: ['*', '.js', '.jsx'],
-    alias: {
-      'react': path.resolve(__dirname, '../../node_modules/react'),
-      'react-dom': path.resolve(__dirname, '../../node_modules/react-dom'),
-    },
   },
   externals: {
     // Don't bundle react or react-dom      
