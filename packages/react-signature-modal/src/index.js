@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
-import './index.css'
+import styles from './index.module.css'
 import DeleteIcon from './components/DeleteIcon'
 
 const ANVIL_URLS = ['https://app.useanvil.com', 'https://staging.useanvil.com']
@@ -20,14 +20,14 @@ function AnvilSignatureModal ({ signURL, isOpen, onClose, onLoad, onFinish, widt
   if (!isOpen) return null
   return (
     <>
-      <div className="modalContainer">
+      <div className={styles.modalContainer}>
         {onClose &&
           <DeleteIcon
-            className="deleteIcon"
+            className={styles.deleteIcon}
             onClick={() => onClose()}
           />}
         <iframe
-          id="signatureFrame"
+          id={styles.signatureFrame}
           src={signURL}
           name="Anvil E-Signatures"
           title="Anvil E-Signatures"
@@ -35,10 +35,10 @@ function AnvilSignatureModal ({ signURL, isOpen, onClose, onLoad, onFinish, widt
           height={height}
           onLoad={onLoad}
         >
-          <p className="docs">Your browser does not support iframes.</p>
+          <p className={styles.docs}>Your browser does not support iframes.</p>
         </iframe>
       </div>
-      <div className="modalBackdrop" />
+      <div className={styles.modalBackdrop} />
     </>
   )
 }
