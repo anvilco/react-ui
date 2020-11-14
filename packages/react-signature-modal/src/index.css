@@ -1,4 +1,4 @@
-.modalContainer {
+.anvil-modalContainer {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -8,7 +8,7 @@
   z-index: 9999;
 }
 
-.modalBackdrop {
+.anvil-modalBackdrop {
   position: fixed;
   top: 0px;
   left: 0px;
@@ -18,7 +18,7 @@
   background: rgba(0, 0, 0, 0.3);
 }
 
-.deleteIcon {
+.anvil-deleteIcon {
   position: fixed;
   top: 10px;
   right: 10px;
@@ -26,22 +26,22 @@
   top: 10px;
   right: 10px;
 }
-.deleteIcon :hover {
+.anvil-deleteIcon :hover {
   cursor: pointer;
   opacity: 0.75;
 }
 
-#signatureFrame {
+#anvil-signatureModal {
   border-style: none;
 }
 
-.docs {
+.anvil-docs {
   margin: 10px 10px 10px 10px;
   font-size: 14px;
   color: #bbb;
 }
 
-.spinner {
+.anvil-spinner {
   border-top: 4px solid rgba('black', 0.1);
   border-right: 4px solid rgba('black', 0.1);
   border-bottom: 4px solid rgba('black', 0.1);
@@ -50,15 +50,15 @@
   top: 48.5%;
   left: 48.5%;
   transform: translate(-50%, -50%);
-  animation: spinSpinner 1.2s infinite linear;
+  animation: anvilSpinSpinner 1.2s infinite linear;
 }
-.spinner :after {
+.anvil-spinner :after {
   border-radius: 50%;
     width: 28px;
     height: 28px;
 }
 
-@keyframes spinSpinner {
+@keyframes anvilSpinSpinner {
   0% {
     transform: rotate(0deg);
   }

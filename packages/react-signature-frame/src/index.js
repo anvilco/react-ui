@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
-import styles from './index.module.css'
+import './index.css'
 
 const ANVIL_URLS = ['https://app.useanvil.com', 'https://staging.useanvil.com']
 
@@ -19,7 +19,7 @@ function AnvilSignatureFrame ({ signURL, scroll, onLoad, onFinish, width, height
 
   return (
     <iframe
-      id={styles.signatureFrame}
+      id="anvil-signatureFrame"
       src={signURL}
       name="Anvil Etch E-Sign"
       title="Anvil Etch E-Sign"
@@ -28,7 +28,7 @@ function AnvilSignatureFrame ({ signURL, scroll, onLoad, onFinish, width, height
       onLoad={onLoad}
       ref={iframeRef}
     >
-      <p className={styles.docs}>Your browser does not support iframes.</p>
+      <p className="anvil-docs">Your browser does not support iframes.</p>
     </iframe>
   )
 }
