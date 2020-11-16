@@ -11,7 +11,7 @@ npm install @anvilco/react-signature-modal
 
 ```js
 import AnvilSignatureFrame from '@anvilco/react-signature-modal'
-import '@anvilco/react-signature-modal/lib/styles.css'
+import '@anvilco/react-signature-modal/dist/styles.css'
 
 <AnvilSignatureModal
   signURL={signURL}
@@ -74,7 +74,7 @@ The width/height of the iframe in CSS pixels. Default is 900w by 1100h.
 
 ## Styling
 
-Styles are not embedded into the React component to support customization. The default styles are provided within the modules under `lib/styles.css`.
+Styles are not embedded into the React component to support customization. The default styles are provided within the modules under `dist/styles.css`.
 
 
 ## Anvil Etch E-Sign Docs
