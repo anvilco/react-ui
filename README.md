@@ -5,7 +5,7 @@ Need to streamline signature gathering in your application? Use [Anvil Etch E-si
 ## AnvilSignatureFrame
 A very minimal component that handles the signing process lifecycle.
 
-![image](https://user-images.githubusercontent.com/26425671/99320552-c2f78d00-2820-11eb-84c4-4b27029e06c8.png)
+![image](https://user-images.githubusercontent.com/26425671/99321187-1d451d80-2822-11eb-821f-da21dddc136e.png)
 
 
 ### Usage
@@ -67,7 +67,7 @@ onFinish={(redirectURL) => window.location.assign(redirectURL)}
 ## AnvilSignatureModal
 A modal component that handles the signing process lifecycle. Compatible with mobile viewports with minimal dependencies.
 
-![image](https://user-images.githubusercontent.com/26425671/99320656-f76b4900-2820-11eb-85fe-b53eeaebc798.png)
+![image](https://user-images.githubusercontent.com/26425671/99321141-09012080-2822-11eb-82b5-ec275bac49a2.png)
 
 
 ### Usage
