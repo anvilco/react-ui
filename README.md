@@ -2,8 +2,11 @@
 
 Need to streamline signature gathering in your application? Use [Anvil Etch E-sign](https://www.useanvil.com/etch-free-e-signatures) and integrate these React lifecycle components when building your custom solution. Pick and choose the component that best suits your use case, integrate it into your code, and the components will take care of the rest.
 
-## AnvilSignatureFrame (Component)
+## AnvilSignatureFrame
 A very minimal component that handles the signing process lifecycle.
+
+![image](https://user-images.githubusercontent.com/26425671/99320552-c2f78d00-2820-11eb-84c4-4b27029e06c8.png)
+
 
 ### Usage
 ```
@@ -61,8 +64,11 @@ onFinish={(redirectURL) => window.location.assign(redirectURL)}
 ```
 
 
-## AnvilSignatureModal (Component)
+## AnvilSignatureModal
 A modal component that handles the signing process lifecycle. Compatible with mobile viewports with minimal dependencies.
+
+![image](https://user-images.githubusercontent.com/26425671/99320656-f76b4900-2820-11eb-85fe-b53eeaebc798.png)
+
 
 ### Usage
 ```
