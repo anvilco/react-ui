@@ -1,6 +1,8 @@
 # AnvilSignatureFrame
 A minimal component that handles the [Anvil Etch](https://www.useanvil.com/etch-free-e-signatures) signing lifecycle.
 
+![image](https://user-images.githubusercontent.com/26425671/99321187-1d451d80-2822-11eb-821f-da21dddc136e.png)
+
 ## Usage
 ```
 yarn add @anvilco/react-signature-frame
