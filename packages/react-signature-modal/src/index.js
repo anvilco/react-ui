@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
-import './index.css'
+import ReactModal from 'react-modal'
 import DeleteIcon from './components/DeleteIcon'
+import './index.css'
+
+ReactModal.setAppElement('#root')
 
 const ANVIL_URLS = ['https://app.useanvil.com', 'https://staging.useanvil.com']
 
@@ -17,36 +20,45 @@ function AnvilSignatureModal ({ signURL, isOpen, onClose, onLoad, onFinish, widt
     }
   }, [isOpen])
 
-  if (!isOpen) return null
   return (
-    <>
-      <div className="anvil-modalContainer">
-        {onClose &&
-          <DeleteIcon
-            className="anvil-deleteIcon"
-            onClick={() => onClose()}
-          />}
-        <iframe
-          id="anvil-signatureModal"
-          src={signURL}
-          name="Anvil E-Signatures"
-          title="Anvil E-Signatures"
-          width={width}
-          height={height}
-          onLoad={onLoad}
-        >
-          <p className="anvil-docs">Your browser does not support iframes.</p>
-        </iframe>
-      </div>
-      <div className="anvil-modalBackdrop" />
-    </>
+    <ReactModal
+      isOpen={isOpen}
+      ariaHideApp
+      shouldFocusAfterRender
+      shouldCloseOnEsc
+      shouldReturnFocusAfterClose
+      role="e-sign"
+      contentLabel="Anvil Signature Modal"
+      className="anvil-modal"
+      overlayClassName="anvil-overlay"
+      portalClassName="anvil-modalPortal"
+      bodyOpenClassName="anvil-signaturePageBody"
+      htmlOpenClassName="anvil-signaturePageHTML"
+    >
+      <iframe
+        id="anvil-signatureModal"
+        src={signURL}
+        name="Anvil E-Signatures"
+        title="Anvil E-Signatures"
+        width={width}
+        height={height}
+        onLoad={onLoad}
+      >
+        <p className="anvil-docs">Your browser does not support iframes.</p>
+      </iframe>
+      {onClose &&
+        <DeleteIcon
+          className="anvil-deleteIcon"
+          onClick={() => onClose()}
+        />}
+    </ReactModal>
   )
 }
 
 AnvilSignatureModal.defaultProps = {
   isOpen: false,
   onFinish: (url) => window.location.assign(url),
-  width: 900,
+  width: 1000,
   height: 1100,
 }
 

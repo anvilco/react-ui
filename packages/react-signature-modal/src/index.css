@@ -1,20 +1,21 @@
-.anvil-modalContainer {
-  position: fixed;
+.anvil-modal {
+  position: absolute;
   top: 50%;
   left: 50%;
+  right: auto;
+  bottom: auto;
   transform: translate(-50%, -50%);
-  border: 1px solid #d8d8d8;
   background: #fbfbfb;
-  z-index: 9999;
+  border: none;
+  outline: none;
 }
 
-.anvil-modalBackdrop {
+.anvil-overlay {
   position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  z-index: 9998;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: rgba(0, 0, 0, 0.3);
 }
 
@@ -39,30 +40,4 @@
   margin: 10px 10px 10px 10px;
   font-size: 14px;
   color: #bbb;
-}
-
-.anvil-spinner {
-  border-top: 4px solid rgba('black', 0.1);
-  border-right: 4px solid rgba('black', 0.1);
-  border-bottom: 4px solid rgba('black', 0.1);
-  border-left: 4px solid #F83877;
-  position: fixed;
-  top: 48.5%;
-  left: 48.5%;
-  transform: translate(-50%, -50%);
-  animation: anvilSpinSpinner 1.2s infinite linear;
-}
-.anvil-spinner :after {
-  border-radius: 50%;
-    width: 28px;
-    height: 28px;
-}
-
-@keyframes anvilSpinSpinner {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }
