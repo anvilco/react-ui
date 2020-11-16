@@ -18,8 +18,6 @@ import '@anvilco/react-signature-frame/dist/styles.css'
   scroll="smooth"
   onLoad={() => setLoading(true)}
   onFinish={(redirectURL) => window.location.assign(redirectURL)}
-  width={800}
-  height={1000}
 />
 ```
 
@@ -57,10 +55,6 @@ This is called by default if not defined otherwise.
 ```js
 onFinish={(redirectURL) => window.location.assign(redirectURL)}
 ```
-
-#### width | height
-##### number | string
-The width/height of the iframe in CSS pixels. Default is 900w by 1100h.
 
 
 ## Styling

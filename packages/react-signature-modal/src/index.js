@@ -8,7 +8,7 @@ ReactModal.setAppElement('#root')
 
 const ANVIL_URLS = ['https://app.useanvil.com', 'https://staging.useanvil.com']
 
-function AnvilSignatureModal ({ signURL, isOpen, onClose, onLoad, onFinish, width, height }) {
+function AnvilSignatureModal ({ signURL, isOpen, onClose, onLoad, onFinish }) {
   useEffect(() => {
     function handleSignFinish ({ origin, data: url }) {
       if (!ANVIL_URLS.includes(origin)) return
@@ -40,8 +40,6 @@ function AnvilSignatureModal ({ signURL, isOpen, onClose, onLoad, onFinish, widt
         src={signURL}
         name="Anvil E-Signatures"
         title="Anvil E-Signatures"
-        width={width}
-        height={height}
         onLoad={onLoad}
       >
         <p className="anvil-docs">Your browser does not support iframes.</p>
@@ -58,8 +56,6 @@ function AnvilSignatureModal ({ signURL, isOpen, onClose, onLoad, onFinish, widt
 AnvilSignatureModal.defaultProps = {
   isOpen: false,
   onFinish: (url) => window.location.assign(url),
-  width: 1000,
-  height: 1100,
 }
 
 AnvilSignatureModal.propTypes = {
@@ -68,14 +64,6 @@ AnvilSignatureModal.propTypes = {
   onClose: PropTypes.func,
   onLoad: PropTypes.func,
   onFinish: PropTypes.func,
-  width: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-  ]),
-  height: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-  ]),
 }
 
 export default AnvilSignatureModal

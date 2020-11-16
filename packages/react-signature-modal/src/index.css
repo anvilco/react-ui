@@ -1,3 +1,10 @@
+#anvil-signatureModal {
+  width: 80vw;
+  height: 85vh;
+  max-width: 1200px;
+  border-style: none;
+}
+
 .anvil-modal {
   position: absolute;
   top: 50%;
@@ -30,10 +37,6 @@
 .anvil-deleteIcon :hover {
   cursor: pointer;
   opacity: 0.75;
-}
-
-#anvil-signatureModal {
-  border-style: none;
 }
 
 .anvil-docs {
