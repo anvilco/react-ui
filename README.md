@@ -67,7 +67,7 @@ onFinish={(redirectURL) => window.location.assign(redirectURL)}
 ## AnvilSignatureModal
 A modal component that handles the signing process lifecycle. Compatible with mobile viewports with minimal dependencies.
 
-![image](https://user-images.githubusercontent.com/26425671/99321141-09012080-2822-11eb-82b5-ec275bac49a2.png)
+![image](https://user-images.githubusercontent.com/26425671/99321463-b83df780-2822-11eb-8967-1ccf459b4c53.png)
 
 
 ### Usage
