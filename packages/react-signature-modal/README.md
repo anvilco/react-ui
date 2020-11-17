@@ -78,6 +78,11 @@ Styles are not embedded into the React component to support customization. The d
 [Read the Docs](https://www.useanvil.com/docs/api/e-signatures)
 
 
+## Links 🔗
+* [@anvilco/react-signature-modal](https://www.npmjs.com/package/@anvilco/react-signature-modal)
+* [Get started with Anvil](https://www.useanvil.com/)
+
+
 ## Notes
 
 * The `allowFormEmbed` config must be set to `true` under your [Anvil organization](https://useanvil.com) for embedded signing. Please reach us at [support@useanvil.com](mailto:hello@useanvil.com).
