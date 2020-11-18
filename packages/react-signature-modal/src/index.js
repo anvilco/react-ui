@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import ReactModal from 'react-modal'
-import AnvilSignatureFrame from '@anvilco/react-signature-frame'
+import AnvilSignatureFrame from '../../react-signature-frame/src/index.js'
 import DeleteIcon from './components/DeleteIcon'
 import './index.css'
 
