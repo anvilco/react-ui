@@ -131,7 +131,6 @@ Customize the component by overriding the default styles. Pass in props to overr
 ## Notes
 
 * The `allowFormEmbed` config must be set to `true` under your [Anvil organization](https://useanvil.com) for embedded signing. Please reach us at [support@useanvil.com](mailto:hello@useanvil.com).
-* React ^v16.8.0 is required.
 
 
 ## Bugs
