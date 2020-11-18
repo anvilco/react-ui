@@ -2,14 +2,12 @@ import React, { useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import './index.css'
 
-const ANVIL_URLS = ['https://app.useanvil.com', 'https://staging.useanvil.com']
-
-function AnvilSignatureFrame ({ signURL, scroll, onLoad, onFinish }) {
+function AnvilSignatureFrame ({ signURL, scroll, onLoad, onFinish, AnvilURL, docsProps, ...otherProps }) {
   const iframeRef = useRef(null)
 
   useEffect(() => {
     function handleSignFinish ({ origin, data: url }) {
-      if (!ANVIL_URLS.includes(origin)) return
+      if (AnvilURL !== origin) return
       onFinish(url)
     }
     window.addEventListener('message', handleSignFinish)
@@ -19,20 +17,26 @@ function AnvilSignatureFrame ({ signURL, scroll, onLoad, onFinish }) {
 
   return (
     <iframe
-      id="anvil-signatureFrame"
-      src={signURL}
+      id="anvil-signature-frame"
       name="Anvil Etch E-Sign"
       title="Anvil Etch E-Sign"
+      {...otherProps}
+      src={signURL}
       onLoad={onLoad}
       ref={iframeRef}
     >
-      <p className="anvil-docs">Your browser does not support iframes.</p>
+      <p className="anvil-docs" {...docsProps}>Your browser does not support iframes.</p>
     </iframe>
   )
 }
 
 AnvilSignatureFrame.defaultProps = {
-  onFinish: (url) => window.location.assign(url),
+  onFinish: (url) => {
+    window.location.assign(url)
+    console.log('RedirectURL:', url)
+  },
+  docsProps: {},
+  AnvilURL: 'https://app.useanvil.com',
 }
 
 AnvilSignatureFrame.propTypes = {
@@ -40,6 +44,8 @@ AnvilSignatureFrame.propTypes = {
   scroll: PropTypes.string,
   onLoad: PropTypes.func,
   onFinish: PropTypes.func,
+  docsProps: PropTypes.object,
+  AnvilURL: PropTypes.string,
 }
 
 export default AnvilSignatureFrame
