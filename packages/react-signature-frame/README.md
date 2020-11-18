@@ -13,7 +13,6 @@ npm install @anvilco/react-signature-frame
 
 ```js
 import AnvilSignatureFrame from '@anvilco/react-signature-frame'
-import '@anvilco/react-signature-frame/dist/styles.css'
 
 <AnvilSignatureFrame
   signURL={signURL}
@@ -59,9 +58,19 @@ onFinish={(redirectURL) => window.location.assign(redirectURL)}
 ```
 
 
+#### docsProps
+##### object
+Pass in custom props into the paragraph tag displayed if the user's browser does not support iframes.
+
+Example:
+```js
+docsProps={{ className: 'warning-text' }}
+```
+
+
 ## Styling
 
-Styles are not embedded into the React component to support customization. The default styles are provided within the modules under `dist/styles.css`.
+Customize the component by overriding the default styles. Pass in props to override IDs and classNames.
 
 
 ## Anvil Etch E-Sign Docs

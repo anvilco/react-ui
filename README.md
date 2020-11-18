@@ -18,7 +18,6 @@ npm install @anvilco/react-signature-frame
 
 ```js
 import AnvilSignatureFrame from '@anvilco/react-signature-frame'
-import '@anvilco/react-signature-frame/dist/styles.css'
 
 <AnvilSignatureFrame
   signURL={signURL}
@@ -64,6 +63,16 @@ onFinish={(redirectURL) => window.location.assign(redirectURL)}
 ```
 
 
+#### docsProps
+##### object
+Pass in custom props into the paragraph tag displayed if the user's browser does not support iframes.
+
+Example:
+```js
+docsProps={{ className: 'warning-text' }}
+```
+
+
 ## AnvilSignatureModal
 A modal component that handles the signing process lifecycle. Compatible with mobile viewports with minimal dependencies.
 
@@ -80,7 +89,6 @@ npm install @anvilco/react-signature-modal
 
 ```js
 import AnvilSignatureFrame from '@anvilco/react-signature-modal'
-import '@anvilco/react-signature-modal/dist/styles.css'
 
 <AnvilSignatureModal
   signURL={signURL}
@@ -135,9 +143,55 @@ onFinish={(redirectURL) => window.location.assign(redirectURL)}
 ```
 
 
+#### modalAppElement
+#### string
+Pass in a query selector identifying the root of your app. Used to hide other page content while the modal is open for
+screenreaders and other accessibility purposes.
+
+Default: `#root`
+
+
+#### showDeleteIcon
+#### boolean
+Show the close icon on the top right of the modal if true.
+
+
+#### docsProps
+##### object
+Pass in custom props into the paragraph tag displayed if the user's browser does not support iframes.
+
+Example:
+```js
+docsProps={{ className: 'warning-text' }}
+```
+
+
+#### AnvilFrameProps
+##### object
+Pass in custom props into the iframe tag displayed within the modal.
+
+Example:
+```js
+AnvilFrameProps={{
+  id: 'my-modal',
+  style: { background: 'white' },
+}}
+```
+
+
+#### deleteIconProps
+##### object
+Pass in custom props into the svg tag for the delete button displayed within the modal.
+
+Example:
+```js
+AnvilFrameProps={{ className: 'custom-delete-class' }}
+```
+
+
 ## Styling
 
-Styles are not embedded into the React component to support customization. The default styles are provided within the modules under `dist/styles.css`.
+Customize the component by overriding the default styles. Pass in props to override IDs and classNames.
 
 ## Anvil Etch E-Sign Docs
 
