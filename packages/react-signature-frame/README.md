@@ -34,9 +34,10 @@ signURL={`https://app.useanvil.com/etch/8iJDbq8dkEmjrsNw7Dnb/sign?token=dsa...`}
 ```
 
 #### scroll
-##### string
-* `auto` - scrolls the window to the signing frame when rendered
-* `smooth` - smoothly scrolls the window to the signing frame when rendered
+##### string | null
+* `auto` - scrolls the window to the signing frame when mounted
+* `smooth` - smoothly scrolls the window to the signing frame when mounted
+* `null` - disables scrolling
 
 #### onLoad
 ##### function
@@ -58,13 +59,18 @@ onFinish={(redirectURL) => window.location.assign(redirectURL)}
 ```
 
 
-#### docsProps
+#### enableDefaultStyles
+##### boolean (default: true)
+Set to false to disable the default inline styles of the component.
+
+
+#### iframeWarningProps
 ##### object
 Pass in custom props into the paragraph tag displayed if the user's browser does not support iframes.
 
 Example:
 ```js
-docsProps={{ className: 'warning-text' }}
+iframeWarningProps={{ className: 'warning-text' }}
 ```
 
 
@@ -85,7 +91,8 @@ Customize the component by overriding the default styles. Pass in props to overr
 
 ## Notes
 
-* The `allowFormEmbed` config must be set to `true` under your [Anvil organization](https://useanvil.com) for embedded signing. Please reach us at [support@useanvil.com](mailto:hello@useanvil.com).
+* Please contact us at [support@useanvil.com](mailto:support@useanvil.com) to enable iframe embedded signing for production signature packets.
+* React >= v16.0 required.
 
 
 ## Bugs

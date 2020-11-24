@@ -1,12 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import './index.css'
 
 class AnvilSignatureFrame extends React.Component {
   constructor (props) {
     super(props)
     this.iframeRef = React.createRef()
-    this.handleSignFinish = this.handleSignFinish.bind(this)
   }
 
   componentDidMount () {
@@ -19,24 +17,33 @@ class AnvilSignatureFrame extends React.Component {
     window.removeEventListener('message', this.handleSignFinish)
   }
 
-  handleSignFinish ({ origin, data: url }) {
+  handleSignFinish = ({ origin, data: url }) => {
     if (this.props.anvilURL !== origin) return
     this.props.onFinish(url)
   }
 
   render () {
-    const { signURL, onLoad, docsProps, ...otherProps } = this.props
+    const { signURL, onLoad, enableDefaultStyles, ...otherProps } = this.props
+    const { iframeWarningProps, ...anvilFrameProps } = otherProps
     return (
       <iframe
         id="anvil-signature-frame"
         name="Anvil Etch E-Sign"
         title="Anvil Etch E-Sign"
-        {...otherProps}
+        style={enableDefaultStyles
+          ? {
+              width: '80vw',
+              height: '85vh',
+              maxWidth: '1200px',
+              borderStyle: 'groove',
+            }
+          : undefined}
+        {...anvilFrameProps}
         src={signURL}
         onLoad={onLoad}
         ref={this.iframeRef}
       >
-        <p className="anvil-docs" {...docsProps}>Your browser does not support iframes.</p>
+        <p className="anvil-iframe-warning" {...iframeWarningProps}>Your browser does not support iframes.</p>
       </iframe>
     )
   }
@@ -44,20 +51,19 @@ class AnvilSignatureFrame extends React.Component {
 
 AnvilSignatureFrame.defaultProps = {
   onFinish: (url) => {
-    window.location.assign(url)
     console.log('RedirectURL:', url)
   },
-  docsProps: {},
   anvilURL: 'https://app.useanvil.com',
+  enableDefaultStyles: true,
 }
 
 AnvilSignatureFrame.propTypes = {
-  signURL: PropTypes.string.isRequired,
+  signURL: PropTypes.string,
   scroll: PropTypes.string,
   onLoad: PropTypes.func,
   onFinish: PropTypes.func,
-  docsProps: PropTypes.object,
   anvilURL: PropTypes.string,
+  enableDefaultStyles: PropTypes.bool,
 }
 
 export default AnvilSignatureFrame

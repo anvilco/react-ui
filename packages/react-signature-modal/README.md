@@ -75,18 +75,23 @@ screenreaders and other accessibility purposes.
 Default: `#root`
 
 
-#### showDeleteIcon
+#### showIconClose
 #### boolean
 Show the close icon on the top right of the modal if true.
 
 
-#### docsProps
+#### enableDefaultStyles
+##### boolean (default: true)
+Set to false to disable the default inline styles of the component.
+
+
+#### iframeWarningProps
 ##### object
 Pass in custom props into the paragraph tag displayed if the user's browser does not support iframes.
 
 Example:
 ```js
-docsProps={{ className: 'warning-text' }}
+iframeWarningProps={{ className: 'warning-text' }}
 ```
 
 
@@ -103,7 +108,7 @@ AnvilFrameProps={{
 ```
 
 
-#### deleteIconProps
+#### iconCloseProps
 ##### object
 Pass in custom props into the svg tag for the delete button displayed within the modal.
 
@@ -130,7 +135,8 @@ Customize the component by overriding the default styles. Pass in props to overr
 
 ## Notes
 
-* The `allowFormEmbed` config must be set to `true` under your [Anvil organization](https://useanvil.com) for embedded signing. Please reach us at [support@useanvil.com](mailto:hello@useanvil.com).
+* Please contact us at [support@useanvil.com](mailto:support@useanvil.com) to enable iframe embedded signing for production signature packets.
+* React >= v16.0 required.
 
 
 ## Bugs
