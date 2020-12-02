@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import ReactModal from 'react-modal'
+
 import AnvilSignatureFrame from '../../react-signature-frame/src/index.js'
 import IconClose from './components/IconClose.js'
 
