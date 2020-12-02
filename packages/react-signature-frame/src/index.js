@@ -39,7 +39,7 @@ class AnvilSignatureFrame extends React.Component {
             }
           : undefined}
         {...anvilFrameProps}
-        src={signURL}
+        src={signURL + '&withinIframe=true'}
         onLoad={onLoad}
         ref={this.iframeRef}
       >
