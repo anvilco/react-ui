@@ -68,9 +68,55 @@ onFinish={(redirectURL) => window.location.assign(redirectURL)}
 ```
 
 
-## Styling
+#### modalAppElement
+#### string
+Pass in a query selector identifying the root of your app. Used to hide other page content while the modal is open for
+screenreaders and other accessibility purposes.
 
-Styles are not embedded into the React component to support customization. The default styles are provided within the modules under `dist/styles.css`.
+Default: `#root`
+
+
+#### showIconClose
+#### boolean
+Show the close icon on the top right of the modal if true.
+
+
+#### iframeWarningProps
+##### object
+Pass in custom props into the paragraph tag displayed if the user's browser does not support iframes.
+
+Example:
+```js
+iframeWarningProps={{ className: 'warning-text' }}
+```
+
+
+#### AnvilFrameProps
+##### object
+Pass in custom props into the iframe tag displayed within the modal.
+
+Example:
+```js
+AnvilFrameProps={{
+  id: 'my-modal',
+  style: { background: 'white' },
+}}
+```
+
+
+#### iconCloseProps
+##### object
+Pass in custom props into the svg tag for the delete button displayed within the modal.
+
+Example:
+```js
+AnvilFrameProps={{ className: 'custom-delete-class' }}
+```
+
+
+#### Styling
+
+Customize the component by importing your own CSS stylesheet. Override IDs or classNames by passing them in as props.
 
 
 ## Anvil Etch E-Sign Docs
@@ -78,10 +124,15 @@ Styles are not embedded into the React component to support customization. The d
 [Read the Docs](https://www.useanvil.com/docs/api/e-signatures)
 
 
+## Links 🔗
+* [@anvilco/react-signature-modal](https://www.npmjs.com/package/@anvilco/react-signature-modal)
+* [Get started with Anvil](https://www.useanvil.com/)
+
+
 ## Notes
 
-* The `allowFormEmbed` config must be set to `true` under your [Anvil organization](https://useanvil.com) for embedded signing. Please reach us at [support@useanvil.com](mailto:hello@useanvil.com).
-* React ^v16.8.0 is required.
+* Please contact us at [support@useanvil.com](mailto:support@useanvil.com) to enable iframe embedded signing for production signature packets.
+* React >= v16.0 required.
 
 
 ## Bugs

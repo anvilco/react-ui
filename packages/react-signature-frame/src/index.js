@@ -1,45 +1,69 @@
-import React, { useEffect, useRef } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
-import './index.css'
 
-const ANVIL_URLS = ['https://app.useanvil.com', 'https://staging.useanvil.com']
+class AnvilSignatureFrame extends React.Component {
+  constructor (props) {
+    super(props)
+    this.iframeRef = React.createRef()
+  }
 
-function AnvilSignatureFrame ({ signURL, scroll, onLoad, onFinish }) {
-  const iframeRef = useRef(null)
+  componentDidMount () {
+    const { scroll } = this.props
+    window.addEventListener('message', this.handleSignFinish)
+    if (scroll) this.iframeRef.current.scrollIntoView({ behavior: scroll })
+  }
 
-  useEffect(() => {
-    function handleSignFinish ({ origin, data: url }) {
-      if (!ANVIL_URLS.includes(origin)) return
-      onFinish(url)
-    }
-    window.addEventListener('message', handleSignFinish)
-    if (scroll) iframeRef.current.scrollIntoView({ behavior: scroll })
-    return () => window.removeEventListener('message', handleSignFinish)
-  }, [])
+  componentWillUnmount () {
+    window.removeEventListener('message', this.handleSignFinish)
+  }
 
-  return (
-    <iframe
-      id="anvil-signatureFrame"
-      src={signURL}
-      name="Anvil Etch E-Sign"
-      title="Anvil Etch E-Sign"
-      onLoad={onLoad}
-      ref={iframeRef}
-    >
-      <p className="anvil-docs">Your browser does not support iframes.</p>
-    </iframe>
-  )
+  handleSignFinish = ({ origin, data: url }) => {
+    if (this.props.anvilURL !== origin) return
+    this.props.onFinish(url)
+  }
+
+  render () {
+    const { signURL, onLoad, enableDefaultStyles, ...otherProps } = this.props
+    const { iframeWarningProps, ...anvilFrameProps } = otherProps
+    return (
+      <iframe
+        id="anvil-signature-frame"
+        name="Anvil Etch E-Sign"
+        title="Anvil Etch E-Sign"
+        style={enableDefaultStyles
+          ? {
+              width: '80vw',
+              height: '85vh',
+              maxWidth: '1200px',
+              borderStyle: 'groove',
+            }
+          : undefined}
+        {...anvilFrameProps}
+        src={signURL + '&withinIframe=true'}
+        onLoad={onLoad}
+        ref={this.iframeRef}
+      >
+        <p className="anvil-iframe-warning" {...iframeWarningProps}>Your browser does not support iframes.</p>
+      </iframe>
+    )
+  }
 }
 
 AnvilSignatureFrame.defaultProps = {
-  onFinish: (url) => window.location.assign(url),
+  onFinish: (url) => {
+    console.log('RedirectURL:', url)
+  },
+  anvilURL: 'https://app.useanvil.com',
+  enableDefaultStyles: true,
 }
 
 AnvilSignatureFrame.propTypes = {
-  signURL: PropTypes.string.isRequired,
+  signURL: PropTypes.string,
   scroll: PropTypes.string,
   onLoad: PropTypes.func,
   onFinish: PropTypes.func,
+  anvilURL: PropTypes.string,
+  enableDefaultStyles: PropTypes.bool,
 }
 
 export default AnvilSignatureFrame

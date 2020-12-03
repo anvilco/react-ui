@@ -18,7 +18,6 @@ npm install @anvilco/react-signature-frame
 
 ```js
 import AnvilSignatureFrame from '@anvilco/react-signature-frame'
-import '@anvilco/react-signature-frame/dist/styles.css'
 
 <AnvilSignatureFrame
   signURL={signURL}
@@ -40,9 +39,10 @@ signURL={`https://app.useanvil.com/etch/8iJDbq8dkEmjrsNw7Dnb/sign?token=dsa...`}
 ```
 
 #### scroll
-##### string
-* `auto` - scrolls the window to the signing frame when rendered
-* `smooth` - smoothly scrolls the window to the signing frame when rendered
+##### string | null
+* `auto` - scrolls the window to the signing frame when mounted
+* `smooth` - smoothly scrolls the window to the signing frame when mounted
+* `null` - disables scrolling
 
 #### onLoad
 ##### function
@@ -62,6 +62,26 @@ This is called by default if not defined otherwise.
 ```js
 onFinish={(redirectURL) => window.location.assign(redirectURL)}
 ```
+
+
+#### enableDefaultStyles
+##### boolean (default: true)
+Set to false to disable the default inline styles of the component.
+
+
+#### iframeWarningProps
+##### object
+Pass in custom props into the paragraph tag displayed if the user's browser does not support iframes.
+
+Example:
+```js
+iframeWarningProps={{ className: 'warning-text' }}
+```
+
+
+#### Styling
+
+Customize the component by disabling `enableDefaultStyles` and importing CSS or passing in inline styles. Override IDs or classNames by passing them in as props.
 
 
 ## AnvilSignatureModal
@@ -135,19 +155,72 @@ onFinish={(redirectURL) => window.location.assign(redirectURL)}
 ```
 
 
-## Styling
+#### modalAppElement
+#### string
+Pass in a query selector identifying the root of your app. Used to hide other page content while the modal is open for
+screenreaders and other accessibility purposes.
 
-Styles are not embedded into the React component to support customization. The default styles are provided within the modules under `dist/styles.css`.
+Default: `#root`
+
+
+#### showIconClose
+#### boolean
+Show the close icon on the top right of the modal if true.
+
+
+#### iframeWarningProps
+##### object
+Pass in custom props into the paragraph tag displayed if the user's browser does not support iframes.
+
+Example:
+```js
+iframeWarningProps={{ className: 'warning-text' }}
+```
+
+
+#### AnvilFrameProps
+##### object
+Pass in custom props into the iframe tag displayed within the modal.
+
+Example:
+```js
+AnvilFrameProps={{
+  id: 'my-modal',
+  style: { background: 'white' },
+}}
+```
+
+
+#### iconCloseProps
+##### object
+Pass in custom props into the svg tag for the delete button displayed within the modal.
+
+Example:
+```js
+AnvilFrameProps={{ className: 'custom-delete-class' }}
+```
+
+
+#### Styling
+
+Customize the component by importing your own CSS stylesheet. Override IDs or classNames by passing them in as props.
+
 
 ## Anvil Etch E-Sign Docs
 
 [Read the Docs](https://www.useanvil.com/docs/api/e-signatures)
 
 
+## Links 🔗
+* [@anvilco/react-signature-frame](https://www.npmjs.com/package/@anvilco/react-signature-frame)
+* [@anvilco/react-signature-modal](https://www.npmjs.com/package/@anvilco/react-signature-modal)
+* [Get started with Anvil](https://www.useanvil.com/)
+
+
 ## Notes
 
-* The `allowFormEmbed` config must be set to `true` under your [Anvil organization](https://useanvil.com) for embedded signing. Please reach us at [support@useanvil.com](mailto:hello@useanvil.com).
-* React ^v16.8.0 is required.
+* Please contact us at [support@useanvil.com](mailto:support@useanvil.com) to enable iframe embedded signing for production signature packets.
+* React >= v16.0 required.
 
 
 ## Bugs

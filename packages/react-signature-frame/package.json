@@ -1,6 +1,6 @@
 {
   "name": "@anvilco/react-signature-frame",
-  "version": "1.4.2",
+  "version": "1.4.6",
   "description": "The AnvilSignatureFrame React component for embedded Etch signatures",
   "author": "Anvil Foundry Inc.",
   "license": "MIT",
@@ -31,12 +31,12 @@
   ],
   "devDependencies": {
     "prop-types": "^15.6.0",
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0"
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
   },
   "peerDependencies": {
     "prop-types": "^15.6.0",
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0"
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
   }
 }
