@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import ReactModal from 'react-modal'
 
+import './index.css'
 import AnvilSignatureFrame from '../../react-signature-frame/src/index.js'
 import IconClose from './components/IconClose.js'
 
@@ -58,15 +59,8 @@ class AnvilSignatureModal extends React.Component {
         onRequestClose={onClose}
       >
         <AnvilSignatureFrame
-          style={enableDefaultStyles
-            ? {
-                width: '80vw',
-                height: '85vh',
-                maxWidth: '1200px',
-                borderStyle: 'none',
-              }
-            : undefined}
           {...anvilFrameProps}
+          enableDefaultStyles={false}
           signURL={signURL}
           onLoad={onLoad}
           onFinish={onFinish}
