@@ -81,11 +81,6 @@ Default: `#root`
 Show the close icon on the top right of the modal if true.
 
 
-#### enableDefaultStyles
-##### boolean (default: true)
-Set to false to disable the default inline styles of the component.
-
-
 #### iframeWarningProps
 ##### object
 Pass in custom props into the paragraph tag displayed if the user's browser does not support iframes.
@@ -121,7 +116,7 @@ AnvilFrameProps={{ className: 'custom-delete-class' }}
 
 ## Styling
 
-Customize the component by overriding the default styles. Pass in props to override IDs and classNames.
+Customize the component by importing your own CSS stylesheet. Pass in props to override IDs and classNames.
 
 
 ## Anvil Etch E-Sign Docs

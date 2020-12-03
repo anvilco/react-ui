@@ -15,7 +15,7 @@ class AnvilSignatureModal extends React.Component {
   render () {
     const {
       signURL, isOpen, onClose, onLoad, onFinish, anvilURL, showIconClose,
-      anvilFrameProps, iconCloseProps, enableDefaultStyles, ...otherProps
+      anvilFrameProps, iconCloseProps, ...otherProps
     } = this.props
 
     return (
@@ -27,56 +27,26 @@ class AnvilSignatureModal extends React.Component {
         shouldCloseOnOverlayClick
         role="e-sign"
         contentLabel="Anvil Signature Modal"
+        className="anvil-modal"
+        overlayClassName="anvil-overlay"
         portalClassName="anvil-modal-portal"
         bodyOpenClassName="anvil-signature-page-body"
         htmlOpenClassName="anvil-signature-page-html"
-        style={enableDefaultStyles
-          ? {
-              content: {
-                position: 'absolute',
-                top: '50%',
-                left: '50%',
-                right: 'auto',
-                bottom: 'auto',
-                transform: 'translate(-50%, -50%)',
-                background: '#fbfbfb',
-                border: 'none',
-                outline: 'none',
-                padding: '0px',
-              },
-              overlay: {
-                position: 'fixed',
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                background: 'rgba(0, 0, 0, 0.3)',
-              },
-            }
-          : undefined}
         {...otherProps}
         isOpen={isOpen}
         onRequestClose={onClose}
       >
         <AnvilSignatureFrame
           {...anvilFrameProps}
-          enableDefaultStyles={false}
           signURL={signURL}
           onLoad={onLoad}
           onFinish={onFinish}
           anvilURL={anvilURL}
+          enableDefaultStyles={false}
         />
         {showIconClose &&
           <IconClose
             className="anvil-delete-icon"
-            style={enableDefaultStyles
-              ? {
-                  cursor: 'pointer',
-                  position: 'fixed',
-                  top: '10px',
-                  right: '10px',
-                }
-              : undefined}
             {...iconCloseProps}
             onClick={onClose}
           />}
@@ -89,7 +59,6 @@ AnvilSignatureModal.defaultProps = {
   isOpen: false,
   modalAppElement: document.body,
   showIconClose: true,
-  enableDefaultStyles: true,
   anvilFrameProps: { id: 'anvil-signature-modal' },
   iconCloseProps: {},
 }
@@ -106,7 +75,6 @@ AnvilSignatureModal.propTypes = {
   ]),
   anvilURL: PropTypes.string,
   showIconClose: PropTypes.bool,
-  enableDefaultStyles: PropTypes.bool,
   anvilFrameProps: PropTypes.object,
   iconCloseProps: PropTypes.object,
 }
