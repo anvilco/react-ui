@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import ReactModal from 'react-modal'
 
-import './index.css'
 import AnvilSignatureFrame from '../../react-signature-frame/src/index.js'
 import IconClose from './components/IconClose.js'
+import './styles.css'
 
 class AnvilSignatureModal extends React.Component {
   constructor (props) {

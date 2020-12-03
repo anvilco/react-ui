@@ -95,6 +95,7 @@ npm install @anvilco/react-signature-modal
 
 ```js
 import AnvilSignatureFrame from '@anvilco/react-signature-modal'
+import '@anvilco/react-signature-modal/dist/styles.css'
 
 <AnvilSignatureModal
   signURL={signURL}
