@@ -8,7 +8,11 @@ module.exports = {
     filename: 'index.js',
     libraryTarget: 'commonjs2',
   },
-  plugins: [new MiniCssExtractPlugin()],
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'styles.css',
+    }),
+  ],
   module: {
     rules: [
       {
