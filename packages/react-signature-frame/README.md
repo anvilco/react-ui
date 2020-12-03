@@ -74,9 +74,9 @@ iframeWarningProps={{ className: 'warning-text' }}
 ```
 
 
-## Styling
+#### Styling
 
-Customize the component by overriding the default styles. Pass in props to override IDs and classNames.
+Customize the component by disabling `enableDefaultStyles` and importing CSS or passing in inline styles. Override IDs or classNames by passing them in as props.
 
 
 ## Anvil Etch E-Sign Docs

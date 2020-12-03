@@ -79,6 +79,11 @@ iframeWarningProps={{ className: 'warning-text' }}
 ```
 
 
+#### Styling
+
+Customize the component by disabling `enableDefaultStyles` and importing CSS or passing in inline styles. Override IDs or classNames by passing them in as props.
+
+
 ## AnvilSignatureModal
 A modal component that handles the signing process lifecycle. Compatible with mobile viewports with minimal dependencies.
 
@@ -196,9 +201,9 @@ AnvilFrameProps={{ className: 'custom-delete-class' }}
 ```
 
 
-## Styling
+#### Styling
 
-Customize the component by importing your own CSS stylesheet. Pass in props to override IDs and classNames.
+Customize the component by importing your own CSS stylesheet. Override IDs or classNames by passing them in as props.
 
 
 ## Anvil Etch E-Sign Docs

@@ -114,9 +114,9 @@ AnvilFrameProps={{ className: 'custom-delete-class' }}
 ```
 
 
-## Styling
+#### Styling
 
-Customize the component by importing your own CSS stylesheet. Pass in props to override IDs and classNames.
+Customize the component by importing your own CSS stylesheet. Override IDs or classNames by passing them in as props.
 
 
 ## Anvil Etch E-Sign Docs
