@@ -91,13 +91,13 @@ iframeWarningProps={{ className: 'warning-text' }}
 ```
 
 
-#### AnvilFrameProps
+#### anvilFrameProps
 ##### object
 Pass in custom props into the iframe tag displayed within the modal.
 
 Example:
 ```js
-AnvilFrameProps={{
+anvilFrameProps={{
   id: 'my-modal',
   style: { background: 'white' },
 }}
@@ -110,7 +110,7 @@ Pass in custom props into the svg tag for the delete button displayed within the
 
 Example:
 ```js
-AnvilFrameProps={{ className: 'custom-delete-class' }}
+iconCloseProps={{ className: 'red-delete-button' }}
 ```
 
 
