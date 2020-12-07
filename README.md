@@ -5,7 +5,7 @@ Need to streamline signature gathering in your application? Use [Anvil Etch E-si
 ## AnvilSignatureFrame
 A very minimal component that handles the signing process lifecycle.
 
-![image](https://user-images.githubusercontent.com/26425671/99321187-1d451d80-2822-11eb-821f-da21dddc136e.png)
+![image](https://user-images.githubusercontent.com/26425671/101393358-d7590380-387b-11eb-827c-5041709a612a.png)
 
 
 ### Usage
@@ -87,7 +87,7 @@ Customize the component by disabling `enableDefaultStyles` and importing CSS or 
 ## AnvilSignatureModal
 A modal component that handles the signing process lifecycle. Compatible with mobile viewports with minimal dependencies.
 
-![image](https://user-images.githubusercontent.com/26425671/99321463-b83df780-2822-11eb-8967-1ccf459b4c53.png)
+![image](https://user-images.githubusercontent.com/26425671/101393509-0f604680-387c-11eb-8e09-b889b0c21c7f.png)
 
 
 ### Usage
@@ -178,13 +178,13 @@ iframeWarningProps={{ className: 'warning-text' }}
 ```
 
 
-#### AnvilFrameProps
+#### anvilFrameProps
 ##### object
 Pass in custom props into the iframe tag displayed within the modal.
 
 Example:
 ```js
-AnvilFrameProps={{
+anvilFrameProps={{
   id: 'my-modal',
   style: { background: 'white' },
 }}
@@ -197,7 +197,7 @@ Pass in custom props into the svg tag for the delete button displayed within the
 
 Example:
 ```js
-AnvilFrameProps={{ className: 'custom-delete-class' }}
+iconCloseProps={{ className: 'red-delete-button' }}
 ```
 
 
