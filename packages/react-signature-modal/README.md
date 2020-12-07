@@ -1,7 +1,7 @@
 # AnvilSignatureModal
 A lightweight modal component that handles the [Anvil Etch](https://www.useanvil.com/etch-free-e-signatures) signing lifecycle. Compatible with mobile viewports with minimal dependencies.
 
-![image](https://user-images.githubusercontent.com/26425671/99321463-b83df780-2822-11eb-8967-1ccf459b4c53.png)
+![image](https://user-images.githubusercontent.com/26425671/101393509-0f604680-387c-11eb-8e09-b889b0c21c7f.png)
 
 ## Usage
 ```
