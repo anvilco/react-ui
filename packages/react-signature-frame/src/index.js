@@ -22,6 +22,7 @@ class AnvilSignatureFrame extends React.Component {
     if (typeof data === 'string') {
       this.props.onFinish(data)
 
+      // parse query params into an object
       const searchStr = data.split('?')[1]
       const searchObj = JSON.parse('{"' + decodeURI(searchStr).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}')
       const { signerStatus, signerEid, nextSignerEid, documentGroupStatus, documentGroupEid, etchPacketEid, weldDataEid } = searchObj
