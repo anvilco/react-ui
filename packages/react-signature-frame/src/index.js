@@ -17,9 +17,24 @@ class AnvilSignatureFrame extends React.Component {
     window.removeEventListener('message', this.handleSignFinish)
   }
 
-  handleSignFinish = ({ origin, data: url }) => {
+  handleSignFinish = ({ origin, data }) => {
     if (this.props.anvilURL !== origin) return
-    this.props.onFinish(url)
+    if (typeof data === 'string') {
+      this.props.onFinish(data)
+
+      const searchStr = data.split('?')[1]
+      const searchObj = JSON.parse('{"' + decodeURI(searchStr).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}')
+      const { signerStatus, signerEid, documentGroupStatus, documentGroupEid, etchPacketEid, weldDataEid } = searchObj
+      this.props.onFinishSigning({
+        action: 'signerComplete',
+        signerStatus,
+        signerEid,
+        documentGroupStatus,
+        documentGroupEid,
+        etchPacketEid,
+        weldDataEid,
+      })
+    }
   }
 
   render () {
@@ -53,6 +68,9 @@ AnvilSignatureFrame.defaultProps = {
   onFinish: (url) => {
     console.log('RedirectURL:', url)
   },
+  onFinishSigning: (payload) => {
+    console.log('Payload:', payload)
+  },
   anvilURL: 'https://app.useanvil.com',
   enableDefaultStyles: true,
 }
@@ -62,6 +80,7 @@ AnvilSignatureFrame.propTypes = {
   scroll: PropTypes.string,
   onLoad: PropTypes.func,
   onFinish: PropTypes.func,
+  onFinishSigning: PropTypes.func,
   anvilURL: PropTypes.string,
   enableDefaultStyles: PropTypes.bool,
 }
