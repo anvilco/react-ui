@@ -23,7 +23,7 @@ import AnvilSignatureFrame from '@anvilco/react-signature-frame'
   signURL={signURL}
   scroll="smooth"
   onLoad={() => setLoading(true)}
-  onFinish={(redirectURL) => window.location.assign(redirectURL)}
+  onFinishSigning={(payload) => console.log(payload)}
 />
 ```
 
@@ -53,14 +53,14 @@ Example:
 onLoad={() => setLoading(false)}
 ```
 
-#### onFinish
+#### onFinishSigning
 ##### function
 This function takes the `redirectURL` as a parameter; called when a user has finished signing.
 
 Example:
 This is called by default if not defined otherwise.
 ```js
-onFinish={(redirectURL) => window.location.assign(redirectURL)}
+onFinishSigning={(payload) => console.log(payload)}
 ```
 
 
@@ -107,7 +107,7 @@ import '@anvilco/react-signature-modal/dist/styles.css'
   isOpen={isModalOpen}
   onClose={() => setIsModalOpen(false)}
   onLoad={() => setLoading(false)}
-  onFinish={(redirectURL) => window.location.assign(redirectURL)}
+  onFinishSigning={(payload) => console.log(payload)}
 />
 ```
 
@@ -144,14 +144,14 @@ Example:
 onLoad={() => setLoading(false)}
 ```
 
-#### onFinish
+#### onFinishSigning
 ##### function
 This function takes the `redirectURL` as a parameter; called when a user has finished signing.
 
 Example:
 This is called by default if not defined otherwise.
 ```js
-onFinish={(redirectURL) => window.location.assign(redirectURL)}
+onFinishSigning={(payload) => console.log(payload)}
 ```
 
 
