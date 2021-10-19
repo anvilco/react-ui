@@ -55,12 +55,25 @@ onLoad={() => setLoading(false)}
 
 #### onFinishSigning
 ##### function
-This function takes the `redirectURL` as a parameter; called when a user has finished signing.
+This function takes the `payload` as a parameter; called when a user has finished signing.
 
 Example:
 This is called by default if not defined otherwise.
 ```js
 onFinishSigning={(payload) => console.log(payload)}
+
+/*
+{
+  action: "signerComplete"
+  documentGroupEid: "9fQnvfy51p7oKrEYajMh"
+  documentGroupStatus: "partial"
+  etchPacketEid: "J1phQTO6WQH6gZcMJAG5"
+  nextSignerEid: "HRLhx4khticpfxsUFSpj"
+  signerEid: "kJzR6mcIWKoZs6KOxV4w"
+  signerStatus: "completed"
+  weldDataEid: undefined
+}
+*/
 ```
 
 
@@ -146,12 +159,25 @@ onLoad={() => setLoading(false)}
 
 #### onFinishSigning
 ##### function
-This function takes the `redirectURL` as a parameter; called when a user has finished signing.
+This function takes the `payload` as a parameter; called when a user has finished signing.
 
 Example:
 This is called by default if not defined otherwise.
 ```js
 onFinishSigning={(payload) => console.log(payload)}
+
+/*
+{
+  action: "signerComplete"
+  documentGroupEid: "9fQnvfy51p7oKrEYajMh"
+  documentGroupStatus: "partial"
+  etchPacketEid: "J1phQTO6WQH6gZcMJAG5"
+  nextSignerEid: "HRLhx4khticpfxsUFSpj"
+  signerEid: "kJzR6mcIWKoZs6KOxV4w"
+  signerStatus: "completed"
+  weldDataEid: undefined
+}
+*/
 ```
 
 
