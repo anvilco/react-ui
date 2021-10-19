@@ -65,12 +65,8 @@ class AnvilSignatureFrame extends React.Component {
 }
 
 AnvilSignatureFrame.defaultProps = {
-  onFinish: (url) => {
-    console.log('RedirectURL:', url)
-  },
-  onFinishSigning: (payload) => {
-    console.log('Payload:', payload)
-  },
+  onFinish: () => {},
+  onFinishSigning: () => {},
   anvilURL: 'https://app.useanvil.com',
   enableDefaultStyles: true,
 }
