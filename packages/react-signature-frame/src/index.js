@@ -24,11 +24,12 @@ class AnvilSignatureFrame extends React.Component {
 
       const searchStr = data.split('?')[1]
       const searchObj = JSON.parse('{"' + decodeURI(searchStr).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}')
-      const { signerStatus, signerEid, documentGroupStatus, documentGroupEid, etchPacketEid, weldDataEid } = searchObj
+      const { signerStatus, signerEid, nextSignerEid, documentGroupStatus, documentGroupEid, etchPacketEid, weldDataEid } = searchObj
       this.props.onFinishSigning({
         action: 'signerComplete',
         signerStatus,
         signerEid,
+        nextSignerEid,
         documentGroupStatus,
         documentGroupEid,
         etchPacketEid,
