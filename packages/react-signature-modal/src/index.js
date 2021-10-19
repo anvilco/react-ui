@@ -14,7 +14,7 @@ class AnvilSignatureModal extends React.Component {
 
   render () {
     const {
-      signURL, isOpen, onClose, onLoad, onFinish, anvilURL, showIconClose,
+      signURL, isOpen, onClose, onLoad, onFinish, onFinishSigning, anvilURL, showIconClose,
       anvilFrameProps, iconCloseProps, ...otherProps
     } = this.props
 
@@ -41,6 +41,7 @@ class AnvilSignatureModal extends React.Component {
           signURL={signURL}
           onLoad={onLoad}
           onFinish={onFinish}
+          onFinishSigning={onFinishSigning}
           anvilURL={anvilURL}
           enableDefaultStyles={false}
         />
@@ -69,6 +70,7 @@ AnvilSignatureModal.propTypes = {
   onClose: PropTypes.func,
   onLoad: PropTypes.func,
   onFinish: PropTypes.func,
+  onFinishSigning: PropTypes.func,
   modalAppElement: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.instanceOf(Element),
