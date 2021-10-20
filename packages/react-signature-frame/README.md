@@ -53,7 +53,6 @@ onLoad={() => setLoading(false)}
 This function takes the `payload` as a parameter; called when a user has finished signing.
 
 Example:
-This is called by default if not defined otherwise.
 ```js
 onFinishSigning={(payload) => console.log(payload)}
 
