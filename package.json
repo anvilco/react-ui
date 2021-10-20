@@ -8,6 +8,7 @@
     "lint": "yarn eslint 'packages/*/src/**.js'",
     "prebuild": "git clean -fdx packages -e packages/*/node_modules",
     "build": "yarn lerna bootstrap && yarn lerna run build",
+    "build:changelog": "yarn lerna run build:changelog",
     "release:local": "yarn build && yarn lerna run pack",
     "release:npm": "yarn build && yarn lerna publish"
   },
@@ -16,6 +17,7 @@
     "@babel/plugin-proposal-class-properties": "^7.14.5",
     "@babel/preset-env": "^7.15.8",
     "@babel/preset-react": "^7.14.5",
+    "auto-changelog": "^2.3.0",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
     "css-loader": "^5.2.7",
