@@ -25,8 +25,10 @@ class AnvilSignatureFrame extends React.Component {
       // parse query params into an object
       const searchStr = data.split('?')[1]
       let payload, searchObj
+      let hasError = false
       if (typeof URLSearchParams !== 'undefined') {
         searchObj = new URLSearchParams(searchStr)
+        hasError = searchObj.get('error') || searchObj.get('errorType')
         payload = {
           action: 'signerComplete',
           signerStatus: searchObj.get('signerStatus'),
@@ -39,6 +41,7 @@ class AnvilSignatureFrame extends React.Component {
         }
       } else {
         searchObj = JSON.parse('{"' + decodeURI(searchStr).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}')
+        hasError = searchObj.error || searchObj.errorType
         payload = {
           action: 'signerComplete',
           signerStatus: searchObj.signerStatus ?? null,
@@ -51,7 +54,7 @@ class AnvilSignatureFrame extends React.Component {
         }
       }
 
-      if (!searchObj.error && !searchObj.errorType) this.props.onFinishSigning(payload)
+      if (!hasError) this.props.onFinishSigning(payload)
     }
   }
 
