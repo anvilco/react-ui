@@ -24,9 +24,9 @@ class AnvilSignatureFrame extends React.Component {
 
       // parse query params into an object
       const searchStr = data.split('?')[1]
-      let payload
+      let payload, searchObj
       if (typeof URLSearchParams !== 'undefined') {
-        const searchObj = new URLSearchParams(searchStr)
+        searchObj = new URLSearchParams(searchStr)
         payload = {
           action: 'signerComplete',
           signerStatus: searchObj.get('signerStatus'),
@@ -38,7 +38,7 @@ class AnvilSignatureFrame extends React.Component {
           weldDataEid: searchObj.get('weldDataEid'),
         }
       } else {
-        const searchObj = JSON.parse('{"' + decodeURI(searchStr).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}')
+        searchObj = JSON.parse('{"' + decodeURI(searchStr).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}')
         payload = {
           action: 'signerComplete',
           signerStatus: searchObj.signerStatus ?? null,
@@ -51,7 +51,7 @@ class AnvilSignatureFrame extends React.Component {
         }
       }
 
-      this.props.onFinishSigning(payload)
+      if (!searchObj.error && !searchObj.errorType) this.props.onFinishSigning(payload)
     }
   }
 
