@@ -48,6 +48,7 @@
     "template": "../../changelog-template.hbs",
     "unreleased": false,
     "commitLimit": true,
-    "tagPrefix": "@anvilco/react-signature-modal@"
+    "tagPrefix": "@anvilco/react-signature-modal@",
+    "breakingPattern": "BREAKING CHANGE:"
   }
 }
