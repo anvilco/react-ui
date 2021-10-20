@@ -76,6 +76,17 @@ onFinishSigning={(payload) => console.log(payload)}
 ```
 
 
+#### onFinish (deprecated)
+
+##### function
+This function takes the `redirectURL` as a parameter; called when a user has finished signing.
+
+Example:
+```js
+onFinish={(redirectURL) => console.log(redirectURL)}
+```
+
+
 #### enableDefaultStyles
 ##### boolean (default: true)
 Set to false to disable the default inline styles of the component.
@@ -176,6 +187,17 @@ onFinishSigning={(payload) => console.log(payload)}
   weldDataEid: undefined
 }
 */
+```
+
+
+#### onFinish (deprecated)
+
+##### function
+This function takes the `redirectURL` as a parameter; called when a user has finished signing.
+
+Example:
+```js
+onFinish={(redirectURL) => console.log(redirectURL)}
 ```
 
 

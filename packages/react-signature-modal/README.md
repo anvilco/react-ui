@@ -80,6 +80,17 @@ onFinishSigning={(payload) => console.log(payload)}
 ```
 
 
+#### onFinish (deprecated)
+
+##### function
+This function takes the `redirectURL` as a parameter; called when a user has finished signing.
+
+Example:
+```js
+onFinish={(redirectURL) => console.log(redirectURL)}
+```
+
+
 #### modalAppElement
 #### string
 Pass in a query selector identifying the root of your app. Used to hide other page content while the modal is open for
