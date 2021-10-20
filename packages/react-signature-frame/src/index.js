@@ -24,18 +24,34 @@ class AnvilSignatureFrame extends React.Component {
 
       // parse query params into an object
       const searchStr = data.split('?')[1]
-      const searchObj = JSON.parse('{"' + decodeURI(searchStr).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}')
-      const { signerStatus, signerEid, nextSignerEid, documentGroupStatus, documentGroupEid, etchPacketEid, weldDataEid } = searchObj
-      this.props.onFinishSigning({
-        action: 'signerComplete',
-        signerStatus,
-        signerEid,
-        nextSignerEid,
-        documentGroupStatus,
-        documentGroupEid,
-        etchPacketEid,
-        weldDataEid,
-      })
+      let payload
+      if (typeof URLSearchParams !== 'undefined') {
+        const searchObj = new URLSearchParams(searchStr)
+        payload = {
+          action: 'signerComplete',
+          signerStatus: searchObj.get('signerStatus'),
+          signerEid: searchObj.get('signerEid'),
+          nextSignerEid: searchObj.get('nextSignerEid'),
+          documentGroupStatus: searchObj.get('documentGroupStatus'),
+          documentGroupEid: searchObj.get('documentGroupEid'),
+          etchPacketEid: searchObj.get('etchPacketEid'),
+          weldDataEid: searchObj.get('weldDataEid'),
+        }
+      } else {
+        const searchObj = JSON.parse('{"' + decodeURI(searchStr).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}')
+        payload = {
+          action: 'signerComplete',
+          signerStatus: searchObj.signerStatus ?? null,
+          signerEid: searchObj.signerEid ?? null,
+          nextSignerEid: searchObj.nextSignerEid ?? null,
+          documentGroupStatus: searchObj.documentGroupStatus ?? null,
+          documentGroupEid: searchObj.documentGroupEid ?? null,
+          etchPacketEid: searchObj.etchPacketEid ?? null,
+          weldDataEid: searchObj.weldDataEid ?? null,
+        }
+      }
+
+      this.props.onFinishSigning(payload)
     }
   }
 
