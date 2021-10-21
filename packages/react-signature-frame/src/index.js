@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import { omit, parseURLParams } from './helpers'
+
 class AnvilSignatureFrame extends React.Component {
   constructor (props) {
     super(props)
@@ -25,26 +27,8 @@ class AnvilSignatureFrame extends React.Component {
         onFinish(data)
       }
 
-      // parse query params into an object
       const searchStr = data.split('?')[1]
-      const payload = {}
-      if (typeof URLSearchParams !== 'undefined') {
-        const searchObj = new URLSearchParams(searchStr)
-        for (const paramEntry of searchObj.entries()) {
-          const [key, value] = paramEntry
-          if (!IGNORED_KEYS[key]) {
-            payload[key] = value
-          }
-        }
-      } else {
-        const searchObj = JSON.parse('{"' + decodeURI(searchStr).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}')
-        for (const paramKey in searchObj) {
-          if (!IGNORED_KEYS[paramKey]) {
-            payload[paramKey] = searchObj[paramKey]
-          }
-        }
-      }
-
+      const payload = omit(parseURLParams(searchStr), IGNORED_KEYS)
       const hasError = payload.action === 'signerError' || payload.error || payload.errorType
       if (!payload.action) {
         payload.action = hasError ? 'signerError' : 'signerComplete'
