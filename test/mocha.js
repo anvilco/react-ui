@@ -14,6 +14,8 @@ module.exports = {
     '@babel/register',
     '../../test/environment.js',
   ],
+  file: '../../test/bddSetup.js',
+  ui: 'bdd-lazy-var/getter',
   'watch-files': [
     './test/**/*.test.js',
     './src/**/*.js',
