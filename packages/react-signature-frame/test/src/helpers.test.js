@@ -89,6 +89,7 @@ describe('omit', function () {
   it('returns an object minus the keys passed', async function () {
     const original = { a: 1, b: 2 }
     expect(omit(original)).to.eql(original)
+    expect(omit(original)).not.to.equal(original)
     expect(omit(original, [])).to.eql(original)
     expect(omit(original, ['b'])).to.eql({ a: 1 })
   })
