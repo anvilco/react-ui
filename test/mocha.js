@@ -15,7 +15,8 @@ module.exports = {
     '../../test/environment.js',
   ],
   'watch-files': [
-    './test/src/**/*.js',
+    './test/**/*.test.js',
+    './src/**/*.js',
   ],
   'watch-ignore': [],
   exit: true,
