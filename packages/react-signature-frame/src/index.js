@@ -18,43 +18,42 @@ class AnvilSignatureFrame extends React.Component {
   }
 
   handleSignFinish = ({ origin, data }) => {
-    if (this.props.anvilURL !== origin) return
+    const { anvilURL, onFinish, onFinishSigning, onError } = this.props
+    if (anvilURL !== origin) return
     if (typeof data === 'string') {
-      this.props.onFinish(data)
+      if (onFinish) {
+        onFinish(data)
+      }
 
       // parse query params into an object
       const searchStr = data.split('?')[1]
-      let payload, searchObj
-      let hasError = false
+      const payload = {}
       if (typeof URLSearchParams !== 'undefined') {
-        searchObj = new URLSearchParams(searchStr)
-        hasError = searchObj.get('error') || searchObj.get('errorType')
-        payload = {
-          action: 'signerComplete',
-          signerStatus: searchObj.get('signerStatus'),
-          signerEid: searchObj.get('signerEid'),
-          nextSignerEid: searchObj.get('nextSignerEid'),
-          documentGroupStatus: searchObj.get('documentGroupStatus'),
-          documentGroupEid: searchObj.get('documentGroupEid'),
-          etchPacketEid: searchObj.get('etchPacketEid'),
-          weldDataEid: searchObj.get('weldDataEid'),
+        const searchObj = new URLSearchParams(searchStr)
+        for (const paramEntry of searchObj.entries()) {
+          const [key, value] = paramEntry
+          if (!IGNORED_KEYS[key]) {
+            payload[key] = value
+          }
         }
       } else {
-        searchObj = JSON.parse('{"' + decodeURI(searchStr).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}')
-        hasError = searchObj.error || searchObj.errorType
-        payload = {
-          action: 'signerComplete',
-          signerStatus: searchObj.signerStatus ?? null,
-          signerEid: searchObj.signerEid ?? null,
-          nextSignerEid: searchObj.nextSignerEid ?? null,
-          documentGroupStatus: searchObj.documentGroupStatus ?? null,
-          documentGroupEid: searchObj.documentGroupEid ?? null,
-          etchPacketEid: searchObj.etchPacketEid ?? null,
-          weldDataEid: searchObj.weldDataEid ?? null,
+        const searchObj = JSON.parse('{"' + decodeURI(searchStr).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}')
+        for (const paramKey in searchObj) {
+          if (!IGNORED_KEYS[paramKey]) {
+            payload[paramKey] = searchObj[paramKey]
+          }
         }
       }
 
-      if (!hasError) this.props.onFinishSigning(payload)
+      const hasError = payload.action === 'signerError' || payload.error || payload.errorType
+      if (!payload.action) {
+        payload.action = hasError ? 'signerError' : 'signerComplete'
+      }
+      if (hasError) {
+        onError(payload)
+      } else {
+        onFinishSigning(payload)
+      }
     }
   }
 
@@ -85,9 +84,14 @@ class AnvilSignatureFrame extends React.Component {
   }
 }
 
+const IGNORED_KEYS = {
+  token: true,
+}
+
 AnvilSignatureFrame.defaultProps = {
   onFinish: () => {},
   onFinishSigning: () => {},
+  onError: () => {},
   anvilURL: 'https://app.useanvil.com',
   enableDefaultStyles: true,
 }
@@ -96,10 +100,13 @@ AnvilSignatureFrame.propTypes = {
   signURL: PropTypes.string,
   scroll: PropTypes.string,
   onLoad: PropTypes.func,
-  onFinish: PropTypes.func,
-  onFinishSigning: PropTypes.func,
+  onError: PropTypes.func.isRequired,
+  onFinishSigning: PropTypes.func.isRequired,
   anvilURL: PropTypes.string,
   enableDefaultStyles: PropTypes.bool,
+
+  // DEPRECATED: use onFinishSigning or onError instead
+  onFinish: PropTypes.func,
 }
 
 export default AnvilSignatureFrame

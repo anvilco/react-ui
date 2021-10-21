@@ -9,7 +9,8 @@
     "build": "webpack --mode production",
     "build:changelog": "yarn auto-changelog",
     "pack": "yarn pack",
-    "version": "yarn build:changelog && git add CHANGELOG.md"
+    "version": "yarn build:changelog && git add CHANGELOG.md",
+    "test": "yarn mocha --config ./test/mocha.js"
   },
   "repository": {
     "type": "git",
