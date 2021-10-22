@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 
 import { omit, parseURLParams } from './helpers'
 
+const IGNORED_KEYS = ['token']
+
 class AnvilSignatureFrame extends React.Component {
   constructor (props) {
     super(props)
@@ -66,10 +68,6 @@ class AnvilSignatureFrame extends React.Component {
       </iframe>
     )
   }
-}
-
-const IGNORED_KEYS = {
-  token: true,
 }
 
 AnvilSignatureFrame.defaultProps = {
