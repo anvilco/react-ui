@@ -44,7 +44,11 @@ class AnvilSignatureFrame extends React.Component {
   }
 
   render () {
-    const { signURL, onLoad, enableDefaultStyles, ...otherProps } = this.props
+    const {
+      signURL, onLoad, enableDefaultStyles,
+      anvilURL, onError, onFinish, onFinishSigning, // ignore these props here.
+      ...otherProps
+    } = this.props
     const { iframeWarningProps, ...anvilFrameProps } = otherProps
     return (
       <iframe
