@@ -32,7 +32,7 @@ import AnvilSignatureFrame from '@anvilco/react-signature-frame'
 
 ### signURL
 
-*string (required)* - A URL to the Anvil signature page generated from the `generateEtchSignURL` GraphQL mutation. The signature frame will be displaying the signing page through this URL.
+*string (required)* - A URL to the Anvil signature page generated from the [`generateEtchSignURL` GraphQL mutation](https://www.useanvil.com/docs/api/e-signatures#controlling-the-signature-process-with-embedded-signers). The signature frame will be displaying the signing page through this URL.
 
 Example:
 ```js
