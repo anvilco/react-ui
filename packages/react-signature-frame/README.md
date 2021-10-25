@@ -32,7 +32,7 @@ import AnvilSignatureFrame from '@anvilco/react-signature-frame'
 
 ### signURL
 
-**string (required)** - A URL to the Anvil signature page generated from the `generateEtchSignURL` GraphQL mutation. The signature frame will be displaying the signing page through this URL.
+*string (required)* - A URL to the Anvil signature page generated from the `generateEtchSignURL` GraphQL mutation. The signature frame will be displaying the signing page through this URL.
 
 Example:
 ```js
@@ -41,7 +41,7 @@ signURL={`https://app.useanvil.com/etch/8iJDbq8dkEmjrsNw7Dnb/sign?token=dsa...`}
 
 ### scroll
 
-**string | null** - Optionally scroll to the signing frame
+*string | null* - Optionally scroll to the signing frame
 
 * `auto` - scrolls the window to the signing frame when mounted
 * `smooth` - smoothly scrolls the window to the signing frame when mounted
@@ -49,7 +49,7 @@ signURL={`https://app.useanvil.com/etch/8iJDbq8dkEmjrsNw7Dnb/sign?token=dsa...`}
 
 ### onLoad
 
-**function** - This function is called when the signing page has finished loading.
+*function* - This function is called when the signing page has finished loading.
 
 Example:
 ```js
@@ -58,7 +58,7 @@ onLoad={() => setLoading(false)}
 
 ### onFinishSigning
 
-**function** - A callback function with `payload` as a parameter. It is called when a user has successfully finished signing.
+*function* - A callback function with `payload` as a parameter. It is called when a user has successfully finished signing.
 
 Example:
 ```js
@@ -80,7 +80,7 @@ onFinishSigning={(payload) => console.log(payload)}
 
 ### onError
 
-**function** - A callback function with an error-specific `payload` as a parameter. It is called when a user experienced an error while attempting to sign. See the docs for details on [how to recover from errors](https://www.useanvil.com/docs/api/e-signatures#handling-signing-errors).
+*function* - A callback function with an error-specific `payload` as a parameter. It is called when a user experienced an error while attempting to sign. See the docs for details on [how to recover from errors](https://www.useanvil.com/docs/api/e-signatures#handling-signing-errors).
 
 Example:
 ```js
@@ -107,7 +107,7 @@ onError={(payload) => console.log(payload)}
 
 ### onFinish (deprecated)
 
-**function** - This function will have `redirectURL` as a parameter; called when a user has finished signing or experienced and error. Please use `onFinishSigning` and `onError` above.
+*function* - This function will have `redirectURL` as a parameter; called when a user has finished signing or experienced and error. Please use `onFinishSigning` and `onError` above.
 
 Example:
 ```js
@@ -116,12 +116,12 @@ onFinish={(redirectURL) => console.log(redirectURL)}
 
 ### enableDefaultStyles
 
-**boolean (default: true)** - Set to false to disable the default inline styles of the component.
+*boolean (default: true)* - Set to false to disable the default inline styles of the component.
 
 
 ### iframeWarningProps
 
-**object** - Pass in custom props into the paragraph tag displayed if the user's browser does not support iframes.
+*object* - Pass in custom props into the paragraph tag displayed if the user's browser does not support iframes.
 
 Example:
 ```js
