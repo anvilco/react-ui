@@ -2,7 +2,7 @@
 
 A lightweight modal component that allows embedding [Anvil Etch](https://www.useanvil.com/docs/api/e-signatures) e-signatures via a modal popup in your app. It will give you information via callbacks through the signing process lifecycle. Compatible with mobile viewports with minimal dependencies.
 
-See the [live demo](https://esign-demo.useanvil.com/) and open-source [repository](https://github.com/anvilco/anvil-e-signature-api-node-example) for a usage example.
+See the [live demo](https://esign-demo.useanvil.com/) and open-source [demo repository](https://github.com/anvilco/anvil-e-signature-api-node-example) for a usage example.
 
 ![image](https://user-images.githubusercontent.com/26425671/101393509-0f604680-387c-11eb-8e09-b889b0c21c7f.png)
 

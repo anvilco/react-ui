@@ -1,13 +1,13 @@
 # Anvil React UI Components
 
-Need to streamline signature gathering in your application? Use [Anvil Etch E-sign](https://www.useanvil.com/etch-free-e-signatures) and integrate these React components to embed our e-signature UI into your app or website. Pick and choose the component that best suits your use case, integrate it into your code, and the components will take care of the rest.
+Need to streamline signature gathering in your application? Use [Anvil Etch E-sign](https://www.useanvil.com/docs/api/e-signatures) and integrate these React components to embed our e-signature UI into your app or website. Pick and choose the component that best suits your use case, integrate it into your code, and the components will take care of the rest.
 
 The following components will embed the Anvil signing process in an `iframe` within your app or website. Please [contact us](mailto:support@useanvil.com) to enable it on your organization for production use. `EtchPackets` [created with `isTest: true`](https://www.useanvil.com/docs/api/e-signatures#testing-your-packet-configuration) are embeddable without contacting us.
 
 * [AnvilSignatureFrame](#AnvilSignatureFrame) - an `iframe` component with lifecycle callbacks for embedding Anvil e-signatures.
 * [AnvilSignatureModal](#AnvilSignatureModal) - a modal popup window component with lifecycle callbacks for embedding Anvil e-signatures.
 
-See the [live demo](https://esign-demo.useanvil.com/) and open-source [repository](https://github.com/anvilco/anvil-e-signature-api-node-example) for a usage example of both components.
+See the [live demo](https://esign-demo.useanvil.com/) and open-source [demo repository](https://github.com/anvilco/anvil-e-signature-api-node-example) for a usage example of both components.
 
 ## AnvilSignatureFrame
 
