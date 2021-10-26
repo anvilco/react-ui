@@ -7,7 +7,10 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "webpack --mode production",
-    "pack": "yarn pack"
+    "build:changelog": "yarn auto-changelog",
+    "pack": "yarn pack",
+    "version": "yarn build:changelog && git add CHANGELOG.md",
+    "test": "yarn mocha --config ./test/mocha.js"
   },
   "repository": {
     "type": "git",
@@ -38,5 +41,13 @@
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
+  },
+  "auto-changelog": {
+    "output": "CHANGELOG.md",
+    "template": "../../changelog-template.hbs",
+    "unreleased": false,
+    "commitLimit": true,
+    "tagPrefix": "@anvilco/react-signature-frame@",
+    "breakingPattern": "BREAKING CHANGE:"
   }
 }
