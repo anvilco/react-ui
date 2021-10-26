@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [@anvilco/react-signature-frame@1.6.0](https://github.com/anvilco/react-ui/compare/@anvilco/react-signature-frame@1.5.0...@anvilco/react-signature-frame@1.6.0) - 2021-10-26
+
+### Merged
+
+- Add onError handler [`#6`](https://github.com/anvilco/react-ui/pull/6)
+
+### Commits
+
+- Add mocha / enzyme tests [`697d7a2`](https://github.com/anvilco/react-ui/commit/697d7a2e0b67c182b7c213847c45879fe5309d45)
+
 ## [@anvilco/react-signature-frame@1.5.0](https://github.com/anvilco/react-ui/compare/@anvilco/react-signature-frame@1.4.6...@anvilco/react-signature-frame@1.5.0) - 2021-10-20
 
 ### Merged
