@@ -37,7 +37,7 @@ describe('ReactSignatureFrame', function () {
       expect($.handleFinishSigning).not.to.have.been.called
     })
 
-    it('does not call any callbacks when a string data passed in', async function () {
+    it('does not call any callbacks when non-string data is passed in', async function () {
       const origin = $.anvilURL
       const data = { action: 'signerComplete' }
       const wrapper = $.render
