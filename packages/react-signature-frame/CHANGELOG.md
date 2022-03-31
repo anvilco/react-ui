@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [@anvilco/react-signature-frame@1.7.0](https://github.com/anvilco/react-ui/compare/@anvilco/react-signature-frame@1.6.0...@anvilco/react-signature-frame@1.7.0) - 2022-03-31
+
+### Commits
+
+- Update dependencies [`d5ee61b`](https://github.com/anvilco/react-ui/commit/d5ee61b147655d4ca1de4b968b54f09a3d162de4)
+- Update peer dependencies [`6c19399`](https://github.com/anvilco/react-ui/commit/6c19399e15d8922aeee87dee14da14c10a0405f3)
+- Update changelogs [`16affa7`](https://github.com/anvilco/react-ui/commit/16affa7746d135f3e09d0cb4104f0ef24e4547cc)
+
 ## [@anvilco/react-signature-frame@1.6.0](https://github.com/anvilco/react-ui/compare/@anvilco/react-signature-frame@1.5.0...@anvilco/react-signature-frame@1.6.0) - 2021-10-26
 
 ### Merged
