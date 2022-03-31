@@ -146,7 +146,7 @@ Customize the component by disabling `enableDefaultStyles` and importing CSS or 
 
 ## Notes
 
-* Please contact us at [support@useanvil.com](mailto:support@useanvil.com) to enable iframe embedded signing for production signature packets.
+* To enable Iframe embedding: go to your organization's settings in Anvil, and enable "Iframe Embedding" in the API section.
 * React >= v16.0 required.
 
 
