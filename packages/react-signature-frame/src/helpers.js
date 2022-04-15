@@ -7,6 +7,7 @@ export function parseURLParams (searchStr, options = {}) {
   let params = {}
   if (typeof URLSearchParams !== 'undefined' && !options?.forceManualParse) {
     const searchObj = new URLSearchParams(searchStr)
+    /* @ts-ignore: TS2339 */
     for (const paramEntry of searchObj.entries()) {
       const [key, value] = paramEntry
       params[key] = value

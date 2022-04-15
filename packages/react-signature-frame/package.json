@@ -5,6 +5,7 @@
   "author": "Anvil Foundry Inc.",
   "license": "MIT",
   "main": "dist/index.js",
+  "types": "./types/index.d.ts",
   "scripts": {
     "build": "webpack --mode production",
     "build:changelog": "yarn auto-changelog",
@@ -33,9 +34,11 @@
     "iframe"
   ],
   "devDependencies": {
+    "@types/react": "^18.0.5",
     "prop-types": "^15.8.1",
     "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react-dom": "^16.0.0",
+    "typescript": "^4.6.3"
   },
   "peerDependencies": {
     "prop-types": "^15.6.0",
