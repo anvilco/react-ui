@@ -1,12 +1,46 @@
 export default AnvilSignatureFrame;
-declare class AnvilSignatureFrame extends React.Component<any, any, any> {
+export type Props = {
+    signURL: string;
+    scroll: string;
+    anvilURL: string;
+    enableDefaultStyles: boolean;
+    iframeWarningProps: any;
+    onLoad: React.ReactEventHandler;
+    onError: Function;
+    onFinishSigning: Function;
+    /**
+     * - Deprecated: Use onFinishSigning or onError instead.
+     */
+    onFinish: Function;
+};
+/**
+ * @typedef Props
+ * @prop {String} signURL
+ * @prop {String} scroll
+ * @prop {String} anvilURL
+ * @prop {boolean} enableDefaultStyles
+ * @prop {Object} iframeWarningProps
+ * @prop {React.ReactEventHandler} onLoad
+ * @prop {Function} onError
+ * @prop {Function} onFinishSigning
+ * @prop {Function} onFinish - Deprecated: Use onFinishSigning or onError instead.
+ */
+/**
+ * @extends React.Component<Props>
+ */
+declare class AnvilSignatureFrame extends React.Component<Props, any, any> {
     constructor(props: any);
     iframeRef: React.RefObject<any>;
     componentDidMount(): void;
     componentWillUnmount(): void;
+    /**
+     * @param {Object} options
+     * @param {String} options.origin
+     * @param {String} options.data
+     */
     handleSignFinish: ({ origin, data }: {
-        origin: any;
-        data: any;
+        origin: string;
+        data: string;
     }) => void;
     render(): JSX.Element;
 }

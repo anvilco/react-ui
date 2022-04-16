@@ -1,4 +1,9 @@
-
+/**
+ * @param {String} searchStr
+ * @param {Object} [options]
+ * @param {boolean} [options.forceManualParse]
+ * @returns {Object}
+ */
 export function parseURLParams (searchStr, options = {}) {
   searchStr = searchStr || ''
   if (typeof searchStr !== 'string') return {}
@@ -28,6 +33,11 @@ export function parseURLParams (searchStr, options = {}) {
   return params
 }
 
+/**
+ * @param {Object} object
+ * @param {String[]} keysToOmit
+ * @returns {*}
+ */
 export function omit (object, keysToOmit) {
   const ret = { ...object }
   if (keysToOmit && keysToOmit.length) {
