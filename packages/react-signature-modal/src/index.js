@@ -6,6 +6,25 @@ import AnvilSignatureFrame from '../../react-signature-frame/src/index.js'
 import IconClose from './components/IconClose.js'
 import './styles.css'
 
+/**
+ * @typedef Props
+ * @prop {String} signURL
+ * @prop {boolean} isOpen
+ * @prop {Function} onClose
+ * @prop {Function} onLoad
+ * @prop {Function} onError
+ * @prop {Function} onFinish
+ * @prop {Function} onFinishSigning
+ * @prop {String|Element} modalAppElement
+ * @prop {String} anvilURL
+ * @prop {boolean} showIconClose
+ * @prop {Object} anvilFrameProps
+ * @prop {Object} iconCloseProps
+ */
+
+/**
+ * @extends React.Component<Props>
+ */
 class AnvilSignatureModal extends React.Component {
   constructor (props) {
     super(props)

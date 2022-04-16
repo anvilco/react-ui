@@ -1,5 +1,37 @@
 export default AnvilSignatureModal;
-declare class AnvilSignatureModal extends React.Component<any, any, any> {
+export type Props = {
+    signURL: string;
+    isOpen: boolean;
+    onClose: Function;
+    onLoad: Function;
+    onError: Function;
+    onFinish: Function;
+    onFinishSigning: Function;
+    modalAppElement: string | Element;
+    anvilURL: string;
+    showIconClose: boolean;
+    anvilFrameProps: any;
+    iconCloseProps: any;
+};
+/**
+ * @typedef Props
+ * @prop {String} signURL
+ * @prop {boolean} isOpen
+ * @prop {Function} onClose
+ * @prop {Function} onLoad
+ * @prop {Function} onError
+ * @prop {Function} onFinish
+ * @prop {Function} onFinishSigning
+ * @prop {String|Element} modalAppElement
+ * @prop {String} anvilURL
+ * @prop {boolean} showIconClose
+ * @prop {Object} anvilFrameProps
+ * @prop {Object} iconCloseProps
+ */
+/**
+ * @extends React.Component<Props>
+ */
+declare class AnvilSignatureModal extends React.Component<Props, any, any> {
     constructor(props: any);
     render(): JSX.Element;
 }
