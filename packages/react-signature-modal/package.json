@@ -5,7 +5,7 @@
   "author": "Anvil Foundry Inc.",
   "license": "MIT",
   "main": "dist/index.js",
-  "types": "./types/react-signature-modal/src/index.d.ts",
+  "types": "dist/react-signature-modal/src/index.d.ts",
   "scripts": {
     "build": "tsc && webpack --mode production",
     "build:changelog": "yarn auto-changelog",
