@@ -7,11 +7,10 @@
   "main": "dist/index.js",
   "types": "./types/react-signature-modal/src/index.d.ts",
   "scripts": {
-    "build": "webpack --mode production",
+    "build": "tsc && webpack --mode production",
     "build:changelog": "yarn auto-changelog",
     "pack": "yarn pack",
-    "version": "yarn build:changelog && git add CHANGELOG.md",
-    "tsc": "tsc"
+    "version": "yarn build:changelog && git add CHANGELOG.md"
   },
   "repository": {
     "type": "git",

@@ -7,12 +7,11 @@
   "main": "dist/index.js",
   "types": "./types/index.d.ts",
   "scripts": {
-    "build": "webpack --mode production",
+    "build": "tsc && webpack --mode production",
     "build:changelog": "yarn auto-changelog",
     "pack": "yarn pack",
     "version": "yarn build:changelog && git add CHANGELOG.md",
-    "test": "yarn mocha --config ./test/mocha.js",
-    "tsc": "tsc"
+    "test": "yarn mocha --config ./test/mocha.js"
   },
   "repository": {
     "type": "git",
