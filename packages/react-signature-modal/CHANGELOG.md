@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [@anvilco/react-signature-modal@1.8.1](https://github.com/anvilco/react-ui/compare/@anvilco/react-signature-modal@1.8.0...@anvilco/react-signature-modal@1.8.1) - 2022-04-18
+
+### Merged
+
+- Fix output path for type defs [`#10`](https://github.com/anvilco/react-ui/pull/10)
+
+### Commits
+
+- Update CHANGELOG [`a4e0dec`](https://github.com/anvilco/react-ui/commit/a4e0dece2bd52702da8d0c60db06c070c1d7d4ff)
+
 ## [@anvilco/react-signature-modal@1.8.0](https://github.com/anvilco/react-ui/compare/@anvilco/react-signature-modal@1.7.1...@anvilco/react-signature-modal@1.8.0) - 2022-04-18
 
 ### Merged
