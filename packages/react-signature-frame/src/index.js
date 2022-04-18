@@ -5,6 +5,22 @@ import { omit, parseURLParams } from './helpers'
 
 const IGNORED_KEYS = ['token']
 
+/**
+ * @typedef Props
+ * @prop {String} signURL
+ * @prop {String} scroll
+ * @prop {String} anvilURL
+ * @prop {boolean} enableDefaultStyles
+ * @prop {Object} iframeWarningProps
+ * @prop {React.ReactEventHandler} onLoad
+ * @prop {Function} onError
+ * @prop {Function} onFinishSigning
+ * @prop {Function} onFinish - Deprecated: Use onFinishSigning or onError instead.
+ */
+
+/**
+ * @extends React.Component<Props>
+ */
 class AnvilSignatureFrame extends React.Component {
   constructor (props) {
     super(props)
@@ -21,6 +37,11 @@ class AnvilSignatureFrame extends React.Component {
     window.removeEventListener('message', this.handleSignFinish)
   }
 
+  /**
+   * @param {Object} options
+   * @param {String} options.origin
+   * @param {String} options.data
+   */
   handleSignFinish = ({ origin, data }) => {
     const { anvilURL, onFinish, onFinishSigning, onError } = this.props
     if (anvilURL !== origin) return

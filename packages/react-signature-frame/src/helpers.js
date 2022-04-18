@@ -1,4 +1,9 @@
-
+/**
+ * @param {String} searchStr
+ * @param {Object} [options]
+ * @param {boolean} [options.forceManualParse]
+ * @returns {Object}
+ */
 export function parseURLParams (searchStr, options = {}) {
   searchStr = searchStr || ''
   if (typeof searchStr !== 'string') return {}
@@ -7,6 +12,7 @@ export function parseURLParams (searchStr, options = {}) {
   let params = {}
   if (typeof URLSearchParams !== 'undefined' && !options?.forceManualParse) {
     const searchObj = new URLSearchParams(searchStr)
+    /* @ts-ignore: TS2339 */
     for (const paramEntry of searchObj.entries()) {
       const [key, value] = paramEntry
       params[key] = value
@@ -27,6 +33,11 @@ export function parseURLParams (searchStr, options = {}) {
   return params
 }
 
+/**
+ * @param {Object} object
+ * @param {String[]} keysToOmit
+ * @returns {*}
+ */
 export function omit (object, keysToOmit) {
   const ret = { ...object }
   if (keysToOmit && keysToOmit.length) {
