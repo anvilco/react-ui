@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [@anvilco/react-signature-modal@1.7.1](https://github.com/anvilco/react-ui/compare/@anvilco/react-signature-modal@1.7.0...@anvilco/react-signature-modal@1.7.1) - 2022-03-31
+
+### Merged
+
+- Update dependencies and peer dependencies [`#7`](https://github.com/anvilco/react-ui/pull/7)
+
+### Commits
+
+- Update CHANGELOG [`a48550b`](https://github.com/anvilco/react-ui/commit/a48550b1889bd411531e6eb3808e7b6ce63be61b)
+
 ## [@anvilco/react-signature-modal@1.7.0](https://github.com/anvilco/react-ui/compare/@anvilco/react-signature-modal@1.6.0...@anvilco/react-signature-modal@1.7.0) - 2022-03-31
 
 ### Commits
