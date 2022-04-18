@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [@anvilco/react-signature-modal@1.8.0](https://github.com/anvilco/react-ui/compare/@anvilco/react-signature-modal@1.7.1...@anvilco/react-signature-modal@1.8.0) - 2022-04-18
+
+### Merged
+
+- Add Typescript typings [`#9`](https://github.com/anvilco/react-ui/pull/9)
+
+### Commits
+
+- Add initial TS support for packages [`0154812`](https://github.com/anvilco/react-ui/commit/0154812070cd23eb7f409efec7dd34dd7aef4f77)
+
 ## [@anvilco/react-signature-modal@1.7.1](https://github.com/anvilco/react-ui/compare/@anvilco/react-signature-modal@1.7.0...@anvilco/react-signature-modal@1.7.1) - 2022-03-31
 
 ### Merged
