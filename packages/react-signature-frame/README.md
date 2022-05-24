@@ -1,10 +1,21 @@
 # AnvilSignatureFrame
 
-A very minimal component that allows you to embed [Anvil Etch](https://www.useanvil.com/docs/api/e-signatures) e-signatures in your app with an `iframe`. It will give you information via callbacks through the signing process lifecycle.
+A very minimal component that allows you to embed [Anvil Etch e-signatures](https://www.useanvil.com/docs/api/e-signatures) e-signatures in your app with an `iframe`. It will give you information via callbacks through the signing process lifecycle.
 
 See the [live demo](https://esign-demo.useanvil.com/) and open-source [demo repository](https://github.com/anvilco/anvil-e-signature-api-node-example) for a usage example.
 
 ![image](https://user-images.githubusercontent.com/26425671/101393358-d7590380-387b-11eb-827c-5041709a612a.png)
+
+## What is Anvil?
+
+[Anvil](https://www.useanvil.com/developers) provides easy APIs for all things paperwork.
+
+1. [PDF filling API](https://www.useanvil.com/products/pdf-filling-api/) - fill out a PDF template with a web request and structured JSON data.
+2. [PDF generation API](https://www.useanvil.com/products/pdf-generation-api/) - send markdown or HTML and Anvil will render it to a PDF.
+3. [Etch E-sign with API](https://www.useanvil.com/products/etch/) - customizable, embeddable, e-signature platform with an API to control the signing process end-to-end.
+4. [Anvil Workflows (w/ API)](https://www.useanvil.com/products/workflows/) - Webforms + PDF + E-sign with a powerful no-code builder. Easily collect structured data, generate PDFs, and request signatures.
+
+Learn more on our [Anvil developer page](https://www.useanvil.com/developers).
 
 ## Usage
 
