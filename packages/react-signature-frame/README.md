@@ -1,6 +1,6 @@
 # AnvilSignatureFrame
 
-A very minimal component that allows you to embed [Anvil Etch e-signatures](https://www.useanvil.com/docs/api/e-signatures) e-signatures in your app with an `iframe`. It will give you information via callbacks through the signing process lifecycle.
+A very minimal component that allows you to embed [Anvil Etch e-signatures](https://www.useanvil.com/docs/api/e-signatures) in your app with an `iframe`. It will give you information via callbacks through the signing process lifecycle.
 
 See the [live demo](https://esign-demo.useanvil.com/) and open-source [demo repository](https://github.com/anvilco/anvil-e-signature-api-node-example) for a usage example.
 
