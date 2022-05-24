@@ -1,6 +1,9 @@
+![Horizontal Lockupblack](https://user-images.githubusercontent.com/293079/169453889-ae211c6c-7634-4ccd-8ca9-8970c2621b6f.png#gh-light-mode-only)
+![Horizontal Lockup copywhite](https://user-images.githubusercontent.com/293079/169453892-895f637b-4633-4a14-b997-960c9e17579b.png#gh-dark-mode-only)
+
 # Anvil React UI Components
 
-Need to streamline signature gathering in your application? Use [Anvil Etch E-sign](https://www.useanvil.com/docs/api/e-signatures) and integrate these React components to embed our e-signature UI into your app or website. Pick and choose the component that best suits your use case, integrate it into your code, and the components will take care of the rest.
+This repo contains multiple React components used to embed [Anvil E-signatures](https://www.useanvil.com/docs/api/e-signatures) into your app or website. Pick and choose the component that best suits your use case, integrate it into your code, and the components will take care of the rest.
 
 The following components will embed the Anvil signing process in an `iframe` within your app or website. To enable, go to your organization's settings in Anvil, and enable "Iframe Embedding" in the API section. `EtchPackets` [created with `isTest: true`](https://www.useanvil.com/docs/api/e-signatures#testing-your-packet-configuration) are embeddable without contacting us.
 
@@ -9,21 +12,16 @@ The following components will embed the Anvil signing process in an `iframe` wit
 
 See the [live demo](https://esign-demo.useanvil.com/) and open-source [demo repository](https://github.com/anvilco/anvil-e-signature-api-node-example) for a usage example of both components.
 
----
-**Example repository maintained by [Anvil](www.useanvil.com/developers)**
+## What is Anvil?
 
-![Horizontal Lockupblack](https://user-images.githubusercontent.com/293079/169453889-ae211c6c-7634-4ccd-8ca9-8970c2621b6f.png#gh-light-mode-only)
-![Horizontal Lockup copywhite](https://user-images.githubusercontent.com/293079/169453892-895f637b-4633-4a14-b997-960c9e17579b.png#gh-dark-mode-only)
+[Anvil](https://www.useanvil.com/developers) provides easy APIs for all things paperwork.
 
-Anvil provides easy APIs for all things paperwork.
 1. [PDF filling API](https://www.useanvil.com/products/pdf-filling-api/) - fill out a PDF template with a web request and structured JSON data.
 2. [PDF generation API](https://www.useanvil.com/products/pdf-generation-api/) - send markdown or HTML and Anvil will render it to a PDF.
 3. [Etch E-sign with API](https://www.useanvil.com/products/etch/) - customizable, embeddable, e-signature platform with an API to control the signing process end-to-end.
 4. [Anvil Workflows (w/ API)](https://www.useanvil.com/products/workflows/) - Webforms + PDF + E-sign with a powerful no-code builder. Easily collect structured data, generate PDFs, and request signatures.
 
-Learn more on our [Anvil developer page](www.useanvil.com/developers).
-
----
+Learn more on our [Anvil developer page](https://www.useanvil.com/developers).
 
 ## AnvilSignatureFrame
 
