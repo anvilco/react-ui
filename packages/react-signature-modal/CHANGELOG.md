@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ### Merged
 
-- Fix output path for type defs [`#10`](https://github.com/anvilco/react-ui/pull/10)
+- [1-min] Fix output path for type defs [`#10`](https://github.com/anvilco/react-ui/pull/10)
 
 ### Commits
 
