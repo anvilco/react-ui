@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [@anvilco/react-signature-modal@1.8.2](https://github.com/anvilco/react-ui/compare/@anvilco/react-signature-modal@1.8.1...@anvilco/react-signature-modal@1.8.2) - 2022-05-25
+
+### Merged
+
+- Update Readme [`#11`](https://github.com/anvilco/react-ui/pull/11)
+
+### Commits
+
+- Add blurb to package readmes [`7e670e0`](https://github.com/anvilco/react-ui/commit/7e670e04d3eb8fb00b19927220dde0083d2f07ae)
+
 ## [@anvilco/react-signature-modal@1.8.1](https://github.com/anvilco/react-ui/compare/@anvilco/react-signature-modal@1.8.0...@anvilco/react-signature-modal@1.8.1) - 2022-04-18
 
 ### Merged
