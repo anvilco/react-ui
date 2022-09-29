@@ -1,0 +1,54 @@
+{
+  "name": "@anvilco/anvil-embed-frame",
+  "version": "1.0.0",
+  "description": "The AnvilEmbedFrame React component for embedded Etch signatures and Workflows.",
+  "author": "Anvil Foundry Inc.",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "build:changelog": "yarn auto-changelog",
+    "pack": "yarn pack",
+    "version": "yarn build:changelog && git add CHANGELOG.md",
+    "test": "yarn mocha --config ./test/mocha.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anvilco/react-ui.git"
+  },
+  "homepage": "https://github.com/anvilco/react-ui#readme",
+  "bugs": {
+    "url": "https://github.com/anvilco/react-ui/issues",
+    "email": "support@useanvil.com"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "@anvilco:registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
+  "keywords": [
+    "signature",
+    "documents",
+    "pdf",
+    "iframe",
+    "workflow"
+  ],
+  "devDependencies": {
+    "prop-types": "^15.8.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.6.0",
+    "react": ">=16",
+    "react-dom": ">=16"
+  },
+  "auto-changelog": {
+    "output": "CHANGELOG.md",
+    "template": "../../changelog-template.hbs",
+    "unreleased": false,
+    "commitLimit": true,
+    "tagPrefix": "@anvilco/anvil-embed-frame@",
+    "breakingPattern": "BREAKING CHANGE:"
+  }
+}
