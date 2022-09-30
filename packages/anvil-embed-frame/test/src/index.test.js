@@ -20,4 +20,30 @@ describe('AnvilEmbedFrame', function () {
     expect(wrapper).to.exist
     expect(wrapper.find('iframe')).to.exist
   })
+
+  describe('onEvent', function () {
+    it('does not call onEvent when non-anvil url passed in', async function () {
+      const origin = 'https://chess.com'
+      const data = { action: 'forgeComplete' }
+      const wrapper = $.render
+      wrapper.instance().handleEvent({ origin, data })
+      expect($.handleEvent).to.not.have.been.called
+    })
+
+    it('does not call onEvent when non-object data passed in', async function () {
+      const origin = $.anvilURL
+      const data = 'signerComplete'
+      const wrapper = $.render
+      wrapper.instance().handleEvent({ origin, data })
+      expect($.handleEvent).to.not.have.been.called
+    })
+
+    it('calls onEvent successfully', async function () {
+      const origin = $.anvilURL
+      const data = { action: 'castEdit' }
+      const wrapper = $.render
+      wrapper.instance().handleEvent({ origin, data })
+      expect($.handleEvent).to.have.been.calledWith(data)
+    })
+  })
 })
