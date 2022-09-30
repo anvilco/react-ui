@@ -43,13 +43,26 @@ import AnvilEmbedFrame from '@anvilco/anvil-embed-frame'
 For Etch e-sign, [refer to these docs](https://www.useanvil.com/docs/api/e-signatures#embedding-the-signing-ui-in-an-iframe) for instructions on generating the signing URL.
 For Workflows, [refer to these docs](https://www.useanvil.com/docs/api/workflows#embedding-workflows-in-your-app) for instructions on retrieving the Workflow URL.
 
+Example
+```js
+// Etch e-signatures
+<AnvilEmbedFrame
+  iframeURL="https://app.useanvil.com/api/etch/verify/QL3RjmpXWBD4W6YCHSLr?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaWduZXJJZCI6MTg3LCJjbGllbnRVc2VySWQiOiJzaWduZXIxIiwiY3JlYXRlZEF0IjoxNjY0NTY4NTkyNTk0LCJleHRyYSI6IkNVQlIiLCJpYXQiOjE2NjQ1Njg1OTIsImV4cCI6MTY2NDY1NDk5Mn0.RMpoBXdAU5k6ozX3y2xoI8ykqx2BXycIKNX7Kq0EFFs"
+/>
+
+// For Workflows
+<AnvilEmbedFrame
+  iframeURL="https://app.useanvil.com/weld/my-org/my-workflow"
+/>
+```
+
 ### onEvent
 
 *Function* - This function is called when an event is triggered.
 Possible event types for Etch e-sign include: `signerComplete`, `signerError`
 Possible event types for Workflwos include: `forgeSubmitPage`, `forgeComplete`
 
-Defaults to `() => {}`
+Defaults to `(eventObject) => {}`
 
 ### enableDefaultStyles
 
