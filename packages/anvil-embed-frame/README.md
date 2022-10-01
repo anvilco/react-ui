@@ -54,11 +54,6 @@ Example
 <AnvilEmbedFrame
   iframeURL="https://app.useanvil.com/weld/my-org/my-workflow"
 />
-
-// For PDF Template, Etch e-sign packet, or Workflow editor
-<AnvilEmbedFrame
-  iframeURL="https://app.useanvil.com/auth/tokenized/login?token=tiORV2IH2sgTG72ih05n"
-/>
 ```
 
 ### onEvent

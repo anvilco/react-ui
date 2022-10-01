@@ -32,9 +32,6 @@ class AnvilEmbedFrame extends React.Component {
         id="anvil-embed-frame"
         name="Anvil Embed Frame"
         title="Anvil Embed Frame"
-        {...others} // props above may be overriden
-        src={iframeURL}
-        ref={this.iframeRef}
         style={enableDefaultStyles
           ? {
               width: '80vw',
@@ -43,6 +40,9 @@ class AnvilEmbedFrame extends React.Component {
               borderStyle: 'groove',
             }
           : undefined}
+        {...others} // props above may be overriden
+        src={iframeURL}
+        ref={this.iframeRef}
       >
         <p id="anvil-iframe-warning">Your browser does not support iframes.</p>
       </iframe>

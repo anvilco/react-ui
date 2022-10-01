@@ -8,8 +8,8 @@ This repo contains multiple React components used to embed [Anvil E-signatures](
 The following components will embed the Anvil product in an `iframe` within your app or website. To enable, go to your organization's settings in Anvil, and enable "Iframe Embedding" in the API section. Test `EtchPackets` [created with `isTest: true`](https://www.useanvil.com/docs/api/e-signatures#testing-your-packet-configuration)and `Workflow submissions` are embeddable without contacting us.
 
 * [AnvilEmbedFrame](#AnvilEmbedFrame) - an `iframe` component with a simple `onEvent` callback for embedding Etch e-sign, Workflows, or editors.
+* [AnvilSignatureModal](#AnvilSignatureModal) - a modal popup window component with lifecycle callbacks for embedding Anvil e-signatures.
 * (Deprecated) [AnvilSignatureFrame](#AnvilSignatureFrame) - an `iframe` component with lifecycle callbacks for embedding Anvil e-signatures.
-* (Deprecated) [AnvilSignatureModal](#AnvilSignatureModal) - a modal popup window component with lifecycle callbacks for embedding Anvil e-signatures.
 
 See the [live demo](https://esign-demo.useanvil.com/) and open-source [demo repository](https://github.com/anvilco/anvil-e-signature-api-node-example) for a usage example of `AnvilSignatureFrame` and `AnvilSignatureModal`.
 
@@ -82,7 +82,7 @@ import AnvilSignatureFrame from '@anvilco/react-signature-frame'
 ```
 
 
-## (Deprecated) AnvilSignatureModal
+## AnvilSignatureModal
 
 A minimal modal component that allows you to embed Anvil e-signatures via a modal popup in your app. It will give you information via callbacks through the signing process lifecycle. Compatible with mobile viewports with minimal dependencies.
 
