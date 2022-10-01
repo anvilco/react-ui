@@ -1,8 +1,8 @@
 # AnvilEmbedFrame
 
-A very minimal component that allows you to embed Anvil [Etch e-signatures](https://www.useanvil.com/docs/api/e-signatures#embedding-the-signing-ui-in-an-iframe) and [Workflows](https://www.useanvil.com/docs/api/workflows#embedding-workflows-in-your-app) in your app with an `iframe`. It will give you information via callbacks.
+A very minimal component that allows you to embed Anvil [Etch e-signatures](https://www.useanvil.com/docs/api/e-signatures#embedding-the-signing-ui-in-an-iframe), [Workflows](https://www.useanvil.com/docs/api/workflows#embedding-workflows-in-your-app), and editors into your app with an `iframe`. It will give you information via callback `onEvent`.
 
-See the Etch e-sign [live demo](https://esign-demo.useanvil.com/) and open-source [demo repository](https://github.com/anvilco/anvil-e-signature-api-node-example) for a Etch e-sign usage example.
+See the Etch e-sign [live demo](https://esign-demo.useanvil.com/) and open-source [demo repository](https://github.com/anvilco/anvil-e-signature-api-node-example) for an embedded Etch e-sign usage example.
 
 ## What is Anvil?
 
@@ -29,7 +29,7 @@ npm install @anvilco/anvil-embed-frame
 import AnvilEmbedFrame from '@anvilco/anvil-embed-frame'
 
 <AnvilEmbedFrame
-  iframeURL={etchSignURL || workflowURL}
+  iframeURL={etchSignURL || workflowURL || editorURL}
   onEvent={(event) => console.log('Event object:', event)}
   className="anvil-embed-frame"
 />
@@ -53,6 +53,11 @@ Example
 // For Workflows
 <AnvilEmbedFrame
   iframeURL="https://app.useanvil.com/weld/my-org/my-workflow"
+/>
+
+// For PDF Template, Etch e-sign packet, or Workflow editor
+<AnvilEmbedFrame
+  iframeURL="https://app.useanvil.com/auth/tokenized/login?token=tiORV2IH2sgTG72ih05n"
 />
 ```
 
@@ -91,6 +96,7 @@ Customize the component by setting the `enableDefaultStyles` prop to false, then
 ## Notes
 
 * To enable iframe embedding, go to your organization's settings in Anvil, and enable "Iframe Embedding" in the API section.
+* Please contact us at [support@useanvil.com](mailto:support@useanvil.com) to enable iframe embedding for editors.
 * React >= v16.0 required.
 
 ## Bugs
@@ -100,3 +106,7 @@ Please file an issue for bugs, missing documentation, or unexpected behavior.
 ## Questions or Feedback
 
 Please email us at [support@useanvil.com](mailto:support@useanvil.com).
+
+## License
+
+MIT
