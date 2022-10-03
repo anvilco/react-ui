@@ -1,4 +1,4 @@
-# AnvilSignatureFrame
+# (Deprecated) AnvilSignatureFrame
 
 A very minimal component that allows you to embed [Anvil Etch e-signatures](https://www.useanvil.com/docs/api/e-signatures) in your app with an `iframe`. It will give you information via callbacks through the signing process lifecycle.
 
