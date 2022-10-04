@@ -1,6 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+/**
+ * @typedef Props
+ * @prop {String} iframeURL
+ * @prop {Function} onEvent
+ * @prop {String} anvilURL
+ * @prop {boolean} enableDefaultStyles
+ * @prop {String} scroll
+ */
+
+/**
+ * @extends React.Component<Props>
+ */
 class AnvilEmbedFrame extends React.Component {
   constructor (props) {
     super(props)
@@ -17,6 +29,11 @@ class AnvilEmbedFrame extends React.Component {
     window.removeEventListener('message', this.handleEvent)
   }
 
+  /**
+   * @param {Object} options
+   * @param {String} options.origin
+   * @param {Object} options.data
+   */
   handleEvent = ({ origin, data }) => {
     const { anvilURL, onEvent } = this.props
     if (anvilURL !== origin) return
