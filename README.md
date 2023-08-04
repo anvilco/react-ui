@@ -9,9 +9,8 @@ The following components will embed the Anvil product in an `iframe` within your
 
 * [AnvilEmbedFrame](#AnvilEmbedFrame) - an `iframe` component with a simple `onEvent` callback for embedding Etch e-sign, Workflows, or editors.
 * [AnvilSignatureModal](#AnvilSignatureModal) - a modal popup window component with lifecycle callbacks for embedding Anvil e-signatures.
-* (Deprecated) [AnvilSignatureFrame](#AnvilSignatureFrame) - an `iframe` component with lifecycle callbacks for embedding Anvil e-signatures.
 
-See the [live demo](https://esign-demo.useanvil.com/) and open-source [demo repository](https://github.com/anvilco/anvil-e-signature-api-node-example) for a usage example of `AnvilSignatureFrame` and `AnvilSignatureModal`.
+See the [live demo](https://esign-demo.useanvil.com/) and open-source [demo repository](https://github.com/anvilco/anvil-e-signature-api-node-example) for a usage example of `AnvilEmbedFrame` and `AnvilSignatureModal`.
 
 ## What is Anvil?
 
@@ -51,37 +50,6 @@ import AnvilEmbedFrame from '@anvilco/anvil-embed-frame'
 ```
 
 
-## (Deprecated) AnvilSignatureFrame
-
-A very minimal component that allows you to embed Anvil e-signatures in your app with an `iframe`. It will give you information via callbacks through the signing process lifecycle.
-
-![image](https://user-images.githubusercontent.com/26425671/101393358-d7590380-387b-11eb-827c-5041709a612a.png)
-
-### Usage
-
-See the [AnvilSignatureFrame README](./packages/react-signature-frame/README.md) for full details.
-
-```sh
-yarn add @anvilco/react-signature-frame
-```
-
-```sh
-npm install @anvilco/react-signature-frame
-```
-
-```js
-import AnvilSignatureFrame from '@anvilco/react-signature-frame'
-
-<AnvilSignatureFrame
-  signURL={signURL}
-  scroll="smooth"
-  onLoad={() => setLoading(true)}
-  onFinishSigning={(payload) => console.log(payload)}
-  onError={(errorPayload) => console.log(errorPayload)}
-/>
-```
-
-
 ## AnvilSignatureModal
 
 A minimal modal component that allows you to embed Anvil e-signatures via a modal popup in your app. It will give you information via callbacks through the signing process lifecycle. Compatible with mobile viewports with minimal dependencies.
@@ -100,7 +68,7 @@ npm install @anvilco/react-signature-modal
 ```
 
 ```js
-import AnvilSignatureFrame from '@anvilco/react-signature-modal'
+import AnvilSignatureModal from '@anvilco/react-signature-modal'
 import '@anvilco/react-signature-modal/dist/styles.css'
 
 <AnvilSignatureModal
@@ -115,7 +83,7 @@ import '@anvilco/react-signature-modal/dist/styles.css'
 
 ## Links 🔗
 
-* [@anvilco/react-signature-frame](https://www.npmjs.com/package/@anvilco/react-signature-frame)
+* [@anvilco/anvil-embed-frame](https://www.npmjs.com/package/@anvilco/anvil-embed-frame)
 * [@anvilco/react-signature-modal](https://www.npmjs.com/package/@anvilco/react-signature-modal)
 * [Getting started with Anvil API](https://www.useanvil.com/docs/api/getting-started)
 * [Anvil e-signature API docs](https://www.useanvil.com/docs/api/e-signatures)
