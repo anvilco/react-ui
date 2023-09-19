@@ -43,20 +43,11 @@ class AnvilEmbedFrame extends React.Component {
   }
 
   render () {
-    const { iframeURL, onEvent, anvilURL, enableDefaultStyles, scroll, ...others } = this.props
+    const { iframeURL, onEvent, anvilURL, scroll, ...others } = this.props
     return (
       <iframe
         id="anvil-embed-frame"
-        name="Anvil Embed Frame"
-        title="Anvil Embed Frame"
-        style={enableDefaultStyles
-          ? {
-              width: '80vw',
-              height: '85vh',
-              maxWidth: '1200px',
-              borderStyle: 'groove',
-            }
-          : undefined}
+        name="AnvilEmbedFrame"
         {...others} // props above may be overriden
         src={iframeURL}
         ref={this.iframeRef}
@@ -70,14 +61,13 @@ class AnvilEmbedFrame extends React.Component {
 AnvilEmbedFrame.defaultProps = {
   onEvent: () => {},
   anvilURL: 'https://app.useanvil.com',
-  enableDefaultStyles: true,
 }
 
 AnvilEmbedFrame.propTypes = {
   iframeURL: PropTypes.string.isRequired,
   onEvent: PropTypes.func,
+  onLoad: PropTypes.func,
   anvilURL: PropTypes.string,
-  enableDefaultStyles: PropTypes.bool,
   scroll: PropTypes.oneOf(['auto', 'smooth']),
 }
 
