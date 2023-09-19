@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [@anvilco/react-signature-modal@1.8.4](https://github.com/anvilco/react-ui/compare/@anvilco/react-signature-modal@1.8.3...@anvilco/react-signature-modal@1.8.4) - 2023-08-04
+
+### Merged
+
+- Update readme to fix import error [`#15`](https://github.com/anvilco/react-ui/pull/15)
+
+### Commits
+
+- Remove AnvilSignatureFrame from main readme + fix import [`f93ef25`](https://github.com/anvilco/react-ui/commit/f93ef251be022bae5521fa57cd3fac818e896954)
+
 ## [@anvilco/react-signature-modal@1.8.3](https://github.com/anvilco/react-ui/compare/@anvilco/react-signature-modal@1.8.2...@anvilco/react-signature-modal@1.8.3) - 2022-10-05
 
 ### Merged
