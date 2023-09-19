@@ -12,9 +12,7 @@ import './styles.css'
  * @prop {boolean} isOpen
  * @prop {Function} onClose
  * @prop {Function} onLoad
- * @prop {Function} onError
- * @prop {Function} onFinish
- * @prop {Function} onFinishSigning
+ * @prop {Function} onEvent
  * @prop {String|Element} modalAppElement
  * @prop {String} anvilURL
  * @prop {boolean} showIconClose

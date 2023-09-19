@@ -65,8 +65,8 @@ AnvilEmbedFrame.defaultProps = {
 
 AnvilEmbedFrame.propTypes = {
   iframeURL: PropTypes.string.isRequired,
-  onEvent: PropTypes.func,
   onLoad: PropTypes.func,
+  onEvent: PropTypes.func,
   anvilURL: PropTypes.string,
   scroll: PropTypes.oneOf(['auto', 'smooth']),
 }
