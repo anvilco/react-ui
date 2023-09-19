@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import ReactModal from 'react-modal'
 
-import AnvilSignatureFrame from '../../react-signature-frame/src/index.js'
+import AnvilEmbedFrame from '../../anvil-embed-frame/src/index.js'
 import IconClose from './components/IconClose.js'
 import './styles.css'
 
@@ -37,9 +37,7 @@ class AnvilSignatureModal extends React.Component {
       isOpen,
       onClose,
       onLoad,
-      onError,
-      onFinish,
-      onFinishSigning,
+      onEvent,
       anvilURL,
       showIconClose,
       anvilFrameProps,
@@ -65,15 +63,12 @@ class AnvilSignatureModal extends React.Component {
         isOpen={isOpen}
         onRequestClose={onClose}
       >
-        <AnvilSignatureFrame
+        <AnvilEmbedFrame
           {...anvilFrameProps}
           signURL={signURL}
           onLoad={onLoad}
-          onError={onError}
-          onFinish={onFinish}
-          onFinishSigning={onFinishSigning}
+          onEvent={onEvent}
           anvilURL={anvilURL}
-          enableDefaultStyles={false}
         />
         {showIconClose &&
           <IconClose
@@ -99,9 +94,7 @@ AnvilSignatureModal.propTypes = {
   isOpen: PropTypes.bool,
   onClose: PropTypes.func,
   onLoad: PropTypes.func,
-  onError: PropTypes.func,
-  onFinish: PropTypes.func,
-  onFinishSigning: PropTypes.func,
+  onEvent: PropTypes.func,
   modalAppElement: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.instanceOf(Element),
