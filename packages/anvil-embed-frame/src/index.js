@@ -6,7 +6,6 @@ import PropTypes from 'prop-types'
  * @prop {String} iframeURL
  * @prop {Function} onEvent
  * @prop {String} anvilURL
- * @prop {boolean} enableDefaultStyles
  * @prop {String} scroll
  */
 
