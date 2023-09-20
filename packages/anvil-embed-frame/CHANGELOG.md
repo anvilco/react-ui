@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [@anvilco/anvil-embed-frame@2.0.0-alpha.0](https://github.com/anvilco/react-ui/compare/@anvilco/anvil-embed-frame@1.1.0...@anvilco/anvil-embed-frame@2.0.0-alpha.0) - 2023-09-18
+
+### Merged
+
+- Update readme to fix import error [`#15`](https://github.com/anvilco/react-ui/pull/15)
+
+### Commits
+
+- Update deps [`52a73bd`](https://github.com/anvilco/react-ui/commit/52a73bd5f16d5435f80cd8ae76f20b2834807c40)
+
 ## @anvilco/anvil-embed-frame@1.1.0 - 2022-10-05
 
 ### Merged

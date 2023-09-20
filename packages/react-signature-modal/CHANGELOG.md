@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [@anvilco/react-signature-modal@2.0.1-alpha.0](https://github.com/anvilco/react-ui/compare/@anvilco/react-signature-modal@2.0.0-alpha.0...@anvilco/react-signature-modal@2.0.1-alpha.0) - 2023-09-19
+
+### Commits
+
+- Publish [`d758493`](https://github.com/anvilco/react-ui/commit/d7584938d5a472eb1f86af81128a96316e0739af)
+- Update signURL -&gt; iframeURL [`9569521`](https://github.com/anvilco/react-ui/commit/956952117657671ec841e3c042219537a74ffd6e)
+
 ## [@anvilco/react-signature-modal@2.0.0-alpha.0](https://github.com/anvilco/react-ui/compare/@anvilco/react-signature-modal@1.8.4...@anvilco/react-signature-modal@2.0.0-alpha.0) - 2023-09-18
 
 ### Commits

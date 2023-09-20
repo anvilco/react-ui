@@ -1,6 +1,6 @@
 {
   "name": "@anvilco/react-signature-modal",
-  "version": "2.0.1-alpha.0",
+  "version": "2.0.1",
   "description": "The AnvilSignatureModal React component for embedded Etch signatures",
   "author": "Anvil Foundry Inc.",
   "license": "MIT",
