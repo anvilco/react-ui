@@ -2,19 +2,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import ReactModal from 'react-modal'
 
-import AnvilSignatureFrame from '../../react-signature-frame/src/index.js'
+import AnvilEmbedFrame from '../../anvil-embed-frame/src/index.js'
 import IconClose from './components/IconClose.js'
 import './styles.css'
 
 /**
  * @typedef Props
- * @prop {String} signURL
+ * @prop {String} iframeURL
  * @prop {boolean} isOpen
  * @prop {Function} onClose
  * @prop {Function} onLoad
- * @prop {Function} onError
- * @prop {Function} onFinish
- * @prop {Function} onFinishSigning
+ * @prop {Function} onEvent
  * @prop {String|Element} modalAppElement
  * @prop {String} anvilURL
  * @prop {boolean} showIconClose
@@ -33,13 +31,11 @@ class AnvilSignatureModal extends React.Component {
 
   render () {
     const {
-      signURL,
+      iframeURL,
       isOpen,
       onClose,
       onLoad,
-      onError,
-      onFinish,
-      onFinishSigning,
+      onEvent,
       anvilURL,
       showIconClose,
       anvilFrameProps,
@@ -65,15 +61,12 @@ class AnvilSignatureModal extends React.Component {
         isOpen={isOpen}
         onRequestClose={onClose}
       >
-        <AnvilSignatureFrame
+        <AnvilEmbedFrame
           {...anvilFrameProps}
-          signURL={signURL}
+          iframeURL={iframeURL}
           onLoad={onLoad}
-          onError={onError}
-          onFinish={onFinish}
-          onFinishSigning={onFinishSigning}
+          onEvent={onEvent}
           anvilURL={anvilURL}
-          enableDefaultStyles={false}
         />
         {showIconClose &&
           <IconClose
@@ -95,13 +88,11 @@ AnvilSignatureModal.defaultProps = {
 }
 
 AnvilSignatureModal.propTypes = {
-  signURL: PropTypes.string,
+  iframeURL: PropTypes.string,
   isOpen: PropTypes.bool,
   onClose: PropTypes.func,
   onLoad: PropTypes.func,
-  onError: PropTypes.func,
-  onFinish: PropTypes.func,
-  onFinishSigning: PropTypes.func,
+  onEvent: PropTypes.func,
   modalAppElement: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.instanceOf(Element),

@@ -76,8 +76,7 @@ import '@anvilco/react-signature-modal/dist/styles.css'
   isOpen={isModalOpen}
   onClose={() => setIsModalOpen(false)}
   onLoad={() => setLoading(false)}
-  onFinishSigning={(payload) => console.log(payload)}
-  onError={(errorPayload) => console.log(errorPayload)}
+  onEvent={(eventObject) => console.log(eventObject)}
 />
 ```
 
