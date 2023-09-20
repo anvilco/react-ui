@@ -8,7 +8,7 @@ import './styles.css'
 
 /**
  * @typedef Props
- * @prop {String} signURL
+ * @prop {String} iframeURL
  * @prop {boolean} isOpen
  * @prop {Function} onClose
  * @prop {Function} onLoad
@@ -31,7 +31,7 @@ class AnvilSignatureModal extends React.Component {
 
   render () {
     const {
-      signURL,
+      iframeURL,
       isOpen,
       onClose,
       onLoad,
@@ -63,7 +63,7 @@ class AnvilSignatureModal extends React.Component {
       >
         <AnvilEmbedFrame
           {...anvilFrameProps}
-          signURL={signURL}
+          iframeURL={iframeURL}
           onLoad={onLoad}
           onEvent={onEvent}
           anvilURL={anvilURL}
@@ -88,7 +88,7 @@ AnvilSignatureModal.defaultProps = {
 }
 
 AnvilSignatureModal.propTypes = {
-  signURL: PropTypes.string,
+  iframeURL: PropTypes.string,
   isOpen: PropTypes.bool,
   onClose: PropTypes.func,
   onLoad: PropTypes.func,
