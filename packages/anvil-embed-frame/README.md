@@ -1,8 +1,8 @@
 # AnvilEmbedFrame
 
-A very minimal component that allows you to embed Anvil [Etch e-signatures](https://www.useanvil.com/docs/api/e-signatures#embedding-the-signing-ui-in-an-iframe), [Workflows](https://www.useanvil.com/docs/api/workflows#embedding-workflows-in-your-app), and editors into your app with an `iframe`. It will give you information via callback `onEvent`.
+`AnvilEmbedFrame` is a very minimal React component that allows you to embed Anvil [Etch e-signatures](https://www.useanvil.com/docs/api/e-signatures#embedding-the-signing-ui-in-an-iframe), [Workflows](https://www.useanvil.com/docs/api/workflows#embedding-workflows-in-your-app), and [embedded builders](https://www.useanvil.com/blog/engineering/embedded-edit-pdf-experience/) into your app with an `iframe`. It will give you information via callback `onEvent`.
 
-See the Etch e-sign [live demo](https://esign-demo.useanvil.com/) and open-source [demo repository](https://github.com/anvilco/anvil-e-signature-api-node-example) for an embedded Etch e-sign usage example.
+See the Etch e-sign [live demo](https://esign-demo.useanvil.com/) and open-source [demo repository](https://github.com/anvilco/anvil-e-signature-api-node-example) for an embedded Etch e-sign usage example using this component.
 
 ## What is Anvil?
 
@@ -30,10 +30,15 @@ import AnvilEmbedFrame from '@anvilco/anvil-embed-frame'
 
 <AnvilEmbedFrame
   iframeURL={etchSignURL || workflowURL || editorURL}
-  onEvent={(event) => console.log('Event object:', event)}
+  onEvent={(eventObject) => console.log('Event object:', eventObject)}
   className="anvil-embed-frame"
+  style={{ border: 'none' }}
 />
 ```
+
+## Upgrading from v1 to v2
+
+Beginning in v2.0, the `enableDefaultStyles` prop has been removed. There are now _no_ default styles embedded in the `AnvilEmbedFrame`, the frame will use default browser `iframe` styling. You can style the iframe with CSS and add `className` and `style` props to the component
 
 ## Props
 
@@ -59,16 +64,10 @@ Example
 ### onEvent
 
 *Function* - This function is called when an event is triggered.
-Possible event types for Etch e-sign include: `signerComplete`, `signerError`
-Possible event types for Workflwos include: `forgeSubmitPage`, `forgeComplete`
+Possible event types for [Etch e-sign include](https://www.useanvil.com/docs/api/e-signatures/#iframe-event-details): `signerComplete`, `signerError`.
+Possible event types for [Workflows include](https://www.useanvil.com/docs/api/workflows/#iframe-event-details): `forgeSubmitPage`, `forgeComplete`, `weldComplete`.
 
 Defaults to `(eventObject) => {}`
-
-### enableDefaultStyles
-
-*Boolean* - Set to false to disable the default inline styles of the component.
-
-Defaults to `true`.
 
 ### scroll
 
@@ -77,10 +76,6 @@ Defaults to `true`.
 * `auto` - scrolls the window to the iframe when mounted
 * `smooth` smoothly scrolls the window to the iframe when mounted
 * `null` - disables scrolling
-
-## Styling
-
-Customize the component by setting the `enableDefaultStyles` prop to false, then import CSS or pass in inline styles. Override IDs or classNames by passing them in as props.
 
 ## Anvil Documentation
 
@@ -91,7 +86,7 @@ Customize the component by setting the `enableDefaultStyles` prop to false, then
 ## Notes
 
 * To enable iframe embedding, go to your organization's settings in Anvil, and enable "Iframe Embedding" in the API section.
-* Please contact us at [support@useanvil.com](mailto:support@useanvil.com) to enable iframe embedding for editors.
+* Please contact us at [support@useanvil.com](mailto:support@useanvil.com) to enable iframe embedding for our [embedded builders UIs](https://www.useanvil.com/blog/engineering/embedded-edit-pdf-experience/): the PDF template builder, e-sign packet builder, or Workflow builder.
 * React >= v16.0 required.
 
 ## Bugs

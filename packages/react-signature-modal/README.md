@@ -32,24 +32,82 @@ import AnvilSignatureModal from '@anvilco/react-signature-modal'
 import '@anvilco/react-signature-modal/dist/styles.css'
 
 <AnvilSignatureModal
-  signURL={signURL}
+  iframeURL={iframeURL}
   isOpen={isModalOpen}
   onClose={() => setIsModalOpen(false)}
   onLoad={() => setLoading(false)}
-  onFinishSigning={(payload) => console.log(payload)}
-  onError={(errorPayload) => console.log(errorPayload)}
+  onEvent={(eventObject) => {
+    console.log(eventObject)
+
+    // See https://www.useanvil.com/docs/api/e-signatures/#iframe-event-details
+    // for all event details.
+    //
+    // Example:
+    //
+    // {
+    //   action: 'signerComplete',
+    //   signerStatus: 'completed',
+    //   signerEid: 'Jc1ZJisPnpF5lHyfyqBW',
+    //   nextSignerEid: 'WBqyfyHl5FpnPsiJZ1cJ',
+    //   documentGroupStatus: 'partial',
+    //   documentGroupEid: 'nEKq2eGim0ijSqKd98nG',
+    //   etchPacketEid: 'XzfmVPfGUEyBc1XyylFo',
+    // }
+  }}
+/>
+```
+
+## Upgrading from v1 to v2
+
+As of v2.0, the `AnvilSignatureModal` now uses `AnvilEmbedFrame` under the hood. The props have changed slightly:
+
+* `signURL` -> `iframeURL`
+* `onFinishSigning` -> `onEvent`. Check the `eventObject.action === 'signerComplete'` to detect a signer has finished signing
+* `onError` -> `onEvent`. Check the `eventObject.action` to determine if there is an error
+
+```js
+// v1.x
+<AnvilSignatureModal
+  // Changed props, see below
+  signURL={signURL}
+  onFinishSigning={(eventObject) => console.log(eventObject)}
+  onError={(eventObject) => console.log(eventObject)}
+
+  // Unchanged!
+  isOpen={isModalOpen}
+  onClose={() => setIsModalOpen(false)}
+  onLoad={() => setLoading(false)}
+/>
+
+// v2.x
+<AnvilSignatureModal
+  // New
+  iframeURL={iframeURL}
+  onEvent={(eventObject) => {
+    console.log(eventObject)
+    if (eventObject.action === 'signerComplete') {
+      // Signer has finished signing
+    } else if (eventObject.error) {
+      // There has been an error
+    }
+  }}
+
+  // Unchanged!
+  isOpen={isModalOpen}
+  onClose={() => setIsModalOpen(false)}
+  onLoad={() => setLoading(false)}
 />
 ```
 
 ## Props
 
-### signURL
+### iframeURL
 
 *string (required)* - A URL to the Anvil signature page generated from the [`generateEtchSignURL` GraphQL mutation](https://www.useanvil.com/docs/api/e-signatures#controlling-the-signature-process-with-embedded-signers). The signature frame will be displaying the signing page through this URL.
 
 Example:
 ```js
-signURL={`https://app.useanvil.com/etch/8iJDbq8dkEmjrsNw7Dnb/sign?token=dsa...`}
+iframeURL={`https://app.useanvil.com/etch/8iJDbq8dkEmjrsNw7Dnb/sign?token=dsa...`}
 ```
 
 ### isOpen
@@ -65,22 +123,14 @@ Example:
 onClose={() => setIsOpen(false))}
 ```
 
-### onLoad
-
-*function* - This function is called when the signing page has finished loading.
-
-Example:
-```js
-onLoad={() => setLoading(false)}
-```
-
-### onFinishSigning
+### onEvent
 
 *function* - A callback function with `payload` as a parameter. It is called when a user has successfully finished signing.
 
 Example:
+
 ```js
-onFinishSigning={(payload) => console.log(payload)}
+onEvent={(eventObject) => console.log(eventObject)}
 
 /*
 {
@@ -96,15 +146,13 @@ onFinishSigning={(payload) => console.log(payload)}
 */
 ```
 
-### onError
+See [our e-sign docs](https://www.useanvil.com/docs/api/e-signatures/#iframe-event-details) for full details on all iframe events.
 
-*function* - A callback function with an error-specific `payload` as a parameter. It is called when a user experienced an error while attempting to sign. See the docs for details on [how to recover from errors](https://www.useanvil.com/docs/api/e-signatures#handling-signing-errors).
+`onEvent` is also called when a user experiences an error while attempting to sign. See the docs for details on [how to recover from errors](https://www.useanvil.com/docs/api/e-signatures#handling-signing-errors).
 
-Example:
+Example error payload:
+
 ```js
-onError={(payload) => console.log(payload)}
-
-/*
 {
   action: "signerError",
   errorType: "tokenExpired", tokenExpired || tokenInvalid || notFound
@@ -120,19 +168,16 @@ onError={(payload) => console.log(payload)}
   etchPacketEid: "J1phQTO6WQH6gZcMJAG5", // If from an EtchPacket
   weldDataEid: "J1phQTO6WQH6gZcMJAG5", // If from a workflow
 }
-*/
 ```
 
-### onFinish (deprecated)
+### onLoad
 
-
-*function* - This function will have `redirectURL` as a parameter; called when a user has finished signing or experienced and error. Please use `onFinishSigning` and `onError` above.
+*function* - This function is called when the signing page has finished loading.
 
 Example:
 ```js
-onFinish={(redirectURL) => console.log(redirectURL)}
+onLoad={() => setLoading(false)}
 ```
-
 
 ### modalAppElement
 
