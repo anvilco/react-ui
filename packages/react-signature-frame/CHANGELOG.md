@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [@anvilco/react-signature-frame@1.8.3](https://github.com/anvilco/react-ui/compare/@anvilco/react-signature-frame@1.8.2...@anvilco/react-signature-frame@1.8.3) - 2022-10-05
+
+### Merged
+
+- Add Typescript support to `AnvilEmbedFrame` [`#13`](https://github.com/anvilco/react-ui/pull/13)
+- New `@anvilco/anvil-embed-frame` package [`#12`](https://github.com/anvilco/react-ui/pull/12)
+
+### Commits
+
+- add package files [`da0e18b`](https://github.com/anvilco/react-ui/commit/da0e18ba795d467d7b62b66069932bb84e9bd05e)
+
 ## [@anvilco/react-signature-frame@1.8.2](https://github.com/anvilco/react-ui/compare/@anvilco/react-signature-frame@1.8.1...@anvilco/react-signature-frame@1.8.2) - 2022-05-25
 
 ### Merged
