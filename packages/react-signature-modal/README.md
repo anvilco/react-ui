@@ -63,7 +63,7 @@ As of v2.0, the `AnvilSignatureModal` now uses `AnvilEmbedFrame` under the hood.
 
 * `signURL` -> `iframeURL`
 * `onFinishSigning` -> `onEvent`. Check the `eventObject.action === 'signerComplete'` to detect a signer has finished signing
-* `onError` -> `onEvent`. Check the `eventObject.action` to determine if there is an error
+* `onError` -> `onEvent`. Check the `eventObject.error` to determine if there is an error
 
 ```js
 // v1.x
