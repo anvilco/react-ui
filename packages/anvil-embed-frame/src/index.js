@@ -1,60 +1,37 @@
-import React from 'react'
+import React, {  useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 
-/**
- * @typedef Props
- * @prop {String} iframeURL
- * @prop {Function} onEvent
- * @prop {String} anvilURL
- * @prop {String} scroll
- */
+const AnvilEmbedFrame = ({ iframeURL, onEvent, anvilURL, scroll, style, iframeRef, ...others }) => {
+  const ref = iframeRef || useRef(null)
 
-/**
- * @extends React.Component<Props>
- */
-class AnvilEmbedFrame extends React.Component {
-  constructor (props) {
-    super(props)
-    this.iframeRef = React.createRef()
-  }
-
-  componentDidMount () {
-    const { scroll } = this.props
-    if (scroll) this.iframeRef.current.scrollIntoView({ behavior: scroll })
-    window.addEventListener('message', this.handleEvent)
-  }
-
-  componentWillUnmount () {
-    window.removeEventListener('message', this.handleEvent)
-  }
-
-  /**
-   * @param {Object} options
-   * @param {String} options.origin
-   * @param {Object} options.data
-   */
-  handleEvent = ({ origin, data }) => {
-    const { anvilURL, onEvent } = this.props
-    if (anvilURL !== origin) return
-    if (typeof data === 'object') {
-      onEvent(data)
+  useEffect(() => {
+    const handleEvent = ({ origin, data }) => {
+      if (anvilURL !== origin) return
+      if (typeof data === 'object') {
+        onEvent(data)
+      }
     }
-  }
 
-  render () {
-    const { iframeURL, onEvent, anvilURL, scroll, ...others } = this.props
-    return (
-      <iframe
-        id="anvil-embed-frame"
-        name="AnvilEmbedFrame"
-        {...others} // props above may be overriden
-        src={iframeURL}
-        ref={this.iframeRef}
-      >
-        <p id="anvil-iframe-warning">Your browser does not support iframes.</p>
-      </iframe>
-    )
-  }
+    if (scroll) ref.current?.scrollIntoView({ behavior: scroll })
+    window.addEventListener('message', handleEvent);
+
+    return () => {
+      window.removeEventListener('message', handleEvent);
+    };
+  }, [anvilURL, onEvent, scroll]);
+
+  return (
+    <iframe
+      id="anvil-embed-frame"
+      name="AnvilEmbedFrame"
+      {...others} // props above may be overridden
+      src={iframeURL}
+      ref={ref}
+      style={style}
+    >
+      <p id="anvil-iframe-warning">Your browser does not support iframes.</p>
+    </iframe>
+  )
 }
 
 AnvilEmbedFrame.defaultProps = {
@@ -64,9 +41,11 @@ AnvilEmbedFrame.defaultProps = {
 
 AnvilEmbedFrame.propTypes = {
   iframeURL: PropTypes.string.isRequired,
+  iframeRef: PropTypes.object,
   onLoad: PropTypes.func,
   onEvent: PropTypes.func,
   anvilURL: PropTypes.string,
+  style: PropTypes.object,
   scroll: PropTypes.oneOf(['auto', 'smooth']),
 }
 
