@@ -7,6 +7,7 @@ export type Props = {
   anvilURL: string;
   iframeRef: React.RefObject<any>;
   enableDefaultStyles: boolean;
+  style: any;
   scroll: string;
 };
 
@@ -24,6 +25,7 @@ declare namespace AnvilEmbedFrame {
     const onEvent: PropTypes.Requireable<(...args: any[]) => any>;
     const anvilURL: PropTypes.Requireable<string>;
     const iframeRef: PropTypes.Requireable<any>;
+    const style: PropTypes.Requireable<any>;
     const enableDefaultStyles: PropTypes.Requireable<boolean>;
     const scroll: PropTypes.Requireable<string>;
   }
