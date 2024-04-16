@@ -1,47 +1,75 @@
 import React from 'react'
 import AnvilEmbedFrame from '../../src/index'
+import { expect } from 'chai' // Assuming you're using Chai for assertions
 
 describe('AnvilEmbedFrame', function () {
-  def('handleEvent', () => sinon.spy())
-  def('anvilURL', 'https://app.useanvil.com')
+  let handleEvent
+  const anvilURL = 'https://app.useanvil.com'
+  const event = new window.Event('message', { bubbles: true })
 
-  def('render', () => shallow(
-    <AnvilEmbedFrame
-      iframeURL="http://localhost"
-      onEvent={$.handleEvent}
-      anvilURL={$.anvilURL}
-    />,
-  ))
-
-  it('renders', async function () {
-    const wrapper = $.render
-    expect(wrapper).to.exist
-    expect(wrapper.find('iframe')).to.exist
+  beforeEach(() => {
+    handleEvent = sinon.spy()
   })
 
-  describe('onEvent', function () {
-    it('does not call onEvent when non-anvil url passed in', async function () {
+  it('renders', function () {
+    const wrapper = shallow(
+      <AnvilEmbedFrame
+        iframeURL="http://localhost"
+        onEvent={handleEvent}
+        anvilURL={anvilURL}
+      />
+    )
+    expect(wrapper.exists()).to.be.true
+    expect(wrapper.find('iframe').exists()).to.be.true
+  })
+
+  describe('handleEvent', function () {
+    it('does not call onEvent when non-anvil url passed in', function () {
       const origin = 'https://chess.com'
       const data = { action: 'forgeComplete' }
-      const wrapper = $.render
-      wrapper.instance().handleEvent({ origin, data })
-      expect($.handleEvent).to.not.have.been.called
+      mount(
+        <AnvilEmbedFrame
+          iframeURL="http://localhost"
+          onEvent={handleEvent}
+          anvilURL={anvilURL}
+        />
+      )
+      event.data = data
+      event.origin = origin
+      window.dispatchEvent(event)
+      expect(handleEvent.called).to.be.false
     })
 
-    it('does not call onEvent when non-object data passed in', async function () {
-      const origin = $.anvilURL
+    it('does not call onEvent when non-object data passed in', function () {
+      const origin = anvilURL
       const data = 'signerComplete'
-      const wrapper = $.render
-      wrapper.instance().handleEvent({ origin, data })
-      expect($.handleEvent).to.not.have.been.called
+      mount(
+        <AnvilEmbedFrame
+          iframeURL="http://localhost"
+          onEvent={handleEvent}
+          anvilURL={anvilURL}
+        />
+      )
+      event.data = data
+      event.origin = origin
+      window.dispatchEvent(event)
+      expect(handleEvent.called).to.be.false
     })
 
-    it('calls onEvent successfully', async function () {
-      const origin = $.anvilURL
+    it('calls onEvent successfully', function () {
+      const origin = anvilURL
       const data = { action: 'castEdit' }
-      const wrapper = $.render
-      wrapper.instance().handleEvent({ origin, data })
-      expect($.handleEvent).to.have.been.calledWith(data)
+      mount(
+        <AnvilEmbedFrame
+          iframeURL="http://localhost"
+          onEvent={handleEvent}
+          anvilURL={anvilURL}
+        />
+      )
+      event.data = data
+      event.origin = origin
+      window.dispatchEvent(event)
+      expect(handleEvent.calledWith(data)).to.be.true
     })
   })
 })

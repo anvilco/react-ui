@@ -27,7 +27,7 @@ const ref = iframeRef || useRef(null)
     return () => {
       window.removeEventListener('message', handleEvent)
     }
-  }, [anvilURL, onEvent, scroll])
+  }, [ anvilURL, onEvent, ref, scroll])
 
   return (
     <iframe
