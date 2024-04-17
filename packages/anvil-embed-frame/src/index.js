@@ -7,6 +7,7 @@ import PropTypes from 'prop-types'
  * @prop {Function} onEvent
  * @prop {String} anvilURL
  * @prop {String} scroll
+ * @prop {object} style
  */
 
 /**
@@ -28,6 +29,10 @@ class AnvilEmbedFrame extends React.Component {
     window.removeEventListener('message', this.handleEvent)
   }
 
+  postMessage = (message) => {
+    this.iframeRef.current.contentWindow.postMessage(message, '*')
+  }
+
   /**
    * @param {Object} options
    * @param {String} options.origin
@@ -42,7 +47,7 @@ class AnvilEmbedFrame extends React.Component {
   }
 
   render () {
-    const { iframeURL, onEvent, anvilURL, scroll, ...others } = this.props
+    const { iframeURL, onEvent, anvilURL, scroll, style, ...others } = this.props
     return (
       <iframe
         id="anvil-embed-frame"
@@ -50,6 +55,7 @@ class AnvilEmbedFrame extends React.Component {
         {...others} // props above may be overriden
         src={iframeURL}
         ref={this.iframeRef}
+        style={style}
       >
         <p id="anvil-iframe-warning">Your browser does not support iframes.</p>
       </iframe>
@@ -68,6 +74,7 @@ AnvilEmbedFrame.propTypes = {
   onEvent: PropTypes.func,
   anvilURL: PropTypes.string,
   scroll: PropTypes.oneOf(['auto', 'smooth']),
+  style: PropTypes.object,
 }
 
 export default AnvilEmbedFrame
