@@ -7,6 +7,7 @@ import PropTypes from 'prop-types'
  * @prop {Function} onEvent
  * @prop {String} anvilURL
  * @prop {String} scroll
+ * @prop {object} style
  */
 
 /**
@@ -15,8 +16,7 @@ import PropTypes from 'prop-types'
 class AnvilEmbedFrame extends React.Component {
   constructor (props) {
     super(props)
-    const { ref } = props
-    this.iframeRef = ref || React.createRef()
+    this.iframeRef = React.createRef()
   }
 
   componentDidMount () {
@@ -74,7 +74,6 @@ AnvilEmbedFrame.propTypes = {
   onEvent: PropTypes.func,
   anvilURL: PropTypes.string,
   scroll: PropTypes.oneOf(['auto', 'smooth']),
-  ref: PropTypes.object,
   style: PropTypes.object,
 }
 

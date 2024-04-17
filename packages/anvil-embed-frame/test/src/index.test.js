@@ -44,4 +44,20 @@ describe('AnvilEmbedFrame', function () {
       expect($.handleEvent).to.have.been.calledWith(data)
     })
   })
+
+  it('calls postMessage successfully', () => {
+    const wrapper = $.render
+    const iframe = wrapper.find('iframe')
+    const postMessage = sinon.spy()
+    const iframeMock = {
+      contentWindow: {
+        postMessage,
+      },
+    }
+
+    iframe.getElement().ref.current = iframeMock
+
+    wrapper.instance().postMessage({ action: 'test' })
+    expect(postMessage.called).to.be.equal(true)
+  })
 })
