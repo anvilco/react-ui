@@ -1,6 +1,6 @@
 {
   "name": "@anvilco/anvil-embed-frame",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "The AnvilEmbedFrame React component for embedded Etch signatures and Workflows.",
   "author": "Anvil Foundry Inc.",
   "license": "MIT",
@@ -9,6 +9,7 @@
   "scripts": {
     "build": "tsc && webpack --mode production",
     "build:changelog": "yarn auto-changelog",
+    "prepack": "rimraf dist && yarn build",
     "pack": "yarn pack",
     "version": "yarn build:changelog && git add CHANGELOG.md",
     "test": "yarn mocha --config ./test/mocha.js",
@@ -40,6 +41,7 @@
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "rimraf": "5.0.5",
     "typescript": "^5.2.2"
   },
   "peerDependencies": {

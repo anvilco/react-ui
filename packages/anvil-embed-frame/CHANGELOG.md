@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ### Merged
 
-- [Breaking] Version 2.0 [`#16`](https://github.com/anvilco/react-ui/pull/16)
+- [Breaking] Update dependencies [`#16`](https://github.com/anvilco/react-ui/pull/16)
 
 ### Commits
 
