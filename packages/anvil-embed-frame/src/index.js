@@ -8,6 +8,7 @@ import PropTypes from 'prop-types'
  * @prop {String} anvilURL
  * @prop {String} scroll
  * @prop {object} style
+ * @prop {string} className
  */
 
 /**
@@ -47,11 +48,12 @@ class AnvilEmbedFrame extends React.Component {
   }
 
   render () {
-    const { iframeURL, onEvent, anvilURL, scroll, style, ...others } = this.props
+    const { iframeURL, onEvent, anvilURL, scroll, style, className, ...others } = this.props
     return (
       <iframe
         id="anvil-embed-frame"
         name="AnvilEmbedFrame"
+        className={className}
         {...others} // props above may be overriden
         src={iframeURL}
         ref={this.iframeRef}
@@ -75,6 +77,7 @@ AnvilEmbedFrame.propTypes = {
   anvilURL: PropTypes.string,
   scroll: PropTypes.oneOf(['auto', 'smooth']),
   style: PropTypes.object,
+  className: PropTypes.string,
 }
 
 export default AnvilEmbedFrame

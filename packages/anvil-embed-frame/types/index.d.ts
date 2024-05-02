@@ -5,6 +5,8 @@ export type Props = {
   anvilURL: string;
   enableDefaultStyles: boolean;
   scroll: string;
+  style: object;
+  className: string;
 };
 /**
  * @typedef Props
@@ -14,6 +16,7 @@ export type Props = {
  * @prop {boolean} enableDefaultStyles
  * @prop {String} scroll
  * @prop {object} style
+ * @prop {string} className
  */
 /**
  * @extends React.Component<Props>
@@ -50,6 +53,7 @@ declare namespace AnvilEmbedFrame {
     export { enableDefaultStyles_1 as enableDefaultStyles };
     export const scroll: PropTypes.Requireable<string>;
     export const style: PropTypes.Requireable<object>;
+    export const className: PropTypes.Requireable<string>;
   }
 }
 import Reacat from "react";
