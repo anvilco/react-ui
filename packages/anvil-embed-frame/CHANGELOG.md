@@ -22,10 +22,17 @@ All notable changes to this project will be documented in this file.
 
 - Update deps [`52a73bd`](https://github.com/anvilco/react-ui/commit/52a73bd5f16d5435f80cd8ae76f20b2834807c40)
 
-## @anvilco/anvil-embed-frame@1.1.0 - 2022-10-05
+## [@anvilco/anvil-embed-frame@1.1.0](https://github.com/anvilco/react-ui/compare/v0.0.0...@anvilco/anvil-embed-frame@1.1.0) - 2022-10-05
+
+## v0.0.0 - 2024-05-02
 
 ### Merged
 
+- Add className prop and type [`#22`](https://github.com/anvilco/react-ui/pull/22)
+- publish better [`#20`](https://github.com/anvilco/react-ui/pull/20)
+- Add style prop and add postMessage helper [`#19`](https://github.com/anvilco/react-ui/pull/19)
+- [Breaking] Update dependencies [`#16`](https://github.com/anvilco/react-ui/pull/16)
+- Update readme to fix import error [`#15`](https://github.com/anvilco/react-ui/pull/15)
 - Add Typescript support to `AnvilEmbedFrame` [`#13`](https://github.com/anvilco/react-ui/pull/13)
 - New `@anvilco/anvil-embed-frame` package [`#12`](https://github.com/anvilco/react-ui/pull/12)
 - Update Readme [`#11`](https://github.com/anvilco/react-ui/pull/11)
