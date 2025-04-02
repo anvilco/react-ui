@@ -72,7 +72,7 @@ import AnvilSignatureModal from '@anvilco/react-signature-modal'
 import '@anvilco/react-signature-modal/dist/styles.css'
 
 <AnvilSignatureModal
-  signURL={signURL}
+  iframeURL={etchSignURL || workflowURL}
   isOpen={isModalOpen}
   onClose={() => setIsModalOpen(false)}
   onLoad={() => setLoading(false)}
