@@ -101,6 +101,9 @@ As of v2.0, the `AnvilSignatureModal` now uses `AnvilEmbedFrame` under the hood.
 
 ## Props
 
+### id
+*string* - html id attribute, overriding the `id` will also remove all default styling for the `react-siganture-modal`. If you just want to override specific styling elements use the `anvilFrameProps` below.
+
 ### iframeURL
 
 *string (required)* - A URL to the Anvil signature page generated from the [`generateEtchSignURL` GraphQL mutation](https://www.useanvil.com/docs/api/e-signatures#controlling-the-signature-process-with-embedded-signers). The signature frame will be displaying the signing page through this URL.
@@ -209,7 +212,6 @@ iframeWarningProps={{ className: 'warning-text' }}
 Example:
 ```js
 anvilFrameProps={{
-  id: 'my-modal',
   style: { background: 'white' },
 }}
 ```
