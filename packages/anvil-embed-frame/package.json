@@ -9,7 +9,9 @@
   "scripts": {
     "build": "tsc && webpack --mode production",
     "build:changelog": "yarn auto-changelog",
-    "prepack": "rimraf dist && yarn build",
+    "clean": "rimraf dist",
+    "clean:build": "yarn clean && yarn build",
+    "prepack": "yarn clean:build",
     "pack": "yarn pack",
     "version": "yarn build:changelog && git add CHANGELOG.md",
     "test": "yarn mocha --config ./test/mocha.js",
@@ -41,7 +43,7 @@
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "rimraf": "5.0.5",
+    "rimraf": "6.0.1",
     "typescript": "^5.2.2"
   },
   "peerDependencies": {
