@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file.
 
+## [@anvilco/anvil-embed-frame@2.2.0](https://github.com/anvilco/react-ui/compare/v2.1.1...@anvilco/anvil-embed-frame@2.2.0) - 2024-05-02
+
+### Merged
+
+- Add className prop and type [`#22`](https://github.com/anvilco/react-ui/pull/22)
+- publish better [`#20`](https://github.com/anvilco/react-ui/pull/20)
+
+### Commits
+
+- yarn lock updates [`57401aa`](https://github.com/anvilco/react-ui/commit/57401aa56d7a70f352382768c0be8fd536b5d5e2)
+
+## [v2.1.1](https://github.com/anvilco/react-ui/compare/@anvilco/anvil-embed-frame@2.0.0...v2.1.1) - 2024-04-17
+
+### Merged
+
+- Add style prop and add postMessage helper [`#19`](https://github.com/anvilco/react-ui/pull/19)
+
+### Commits
+
+- Update changelogs [`73908a8`](https://github.com/anvilco/react-ui/commit/73908a846d6cf7da180303270a4d726335ff881f)
+
 ## [@anvilco/anvil-embed-frame@2.0.0](https://github.com/anvilco/react-ui/compare/@anvilco/anvil-embed-frame@2.0.0-alpha.0...@anvilco/anvil-embed-frame@2.0.0) - 2023-09-20
 
 ### Merged
@@ -22,17 +43,10 @@ All notable changes to this project will be documented in this file.
 
 - Update deps [`52a73bd`](https://github.com/anvilco/react-ui/commit/52a73bd5f16d5435f80cd8ae76f20b2834807c40)
 
-## [@anvilco/anvil-embed-frame@1.1.0](https://github.com/anvilco/react-ui/compare/v0.0.0...@anvilco/anvil-embed-frame@1.1.0) - 2022-10-05
-
-## v0.0.0 - 2024-05-02
+## @anvilco/anvil-embed-frame@1.1.0 - 2022-10-05
 
 ### Merged
 
-- Add className prop and type [`#22`](https://github.com/anvilco/react-ui/pull/22)
-- publish better [`#20`](https://github.com/anvilco/react-ui/pull/20)
-- Add style prop and add postMessage helper [`#19`](https://github.com/anvilco/react-ui/pull/19)
-- [Breaking] Update dependencies [`#16`](https://github.com/anvilco/react-ui/pull/16)
-- Update readme to fix import error [`#15`](https://github.com/anvilco/react-ui/pull/15)
 - Add Typescript support to `AnvilEmbedFrame` [`#13`](https://github.com/anvilco/react-ui/pull/13)
 - New `@anvilco/anvil-embed-frame` package [`#12`](https://github.com/anvilco/react-ui/pull/12)
 - Update Readme [`#11`](https://github.com/anvilco/react-ui/pull/11)

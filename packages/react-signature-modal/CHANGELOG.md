@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v2.1.1](https://github.com/anvilco/react-ui/compare/@anvilco/react-signature-modal@2.1.0...v2.1.1) - 2024-04-17
+
+## [@anvilco/react-signature-modal@2.1.0](https://github.com/anvilco/react-ui/compare/@anvilco/react-signature-modal@2.0.1...@anvilco/react-signature-modal@2.1.0) - 2024-05-02
+
+### Merged
+
+- Add className prop and type [`#22`](https://github.com/anvilco/react-ui/pull/22)
+- publish better [`#20`](https://github.com/anvilco/react-ui/pull/20)
+- Add style prop and add postMessage helper [`#19`](https://github.com/anvilco/react-ui/pull/19)
+
+### Commits
+
+- yarn lock updates [`57401aa`](https://github.com/anvilco/react-ui/commit/57401aa56d7a70f352382768c0be8fd536b5d5e2)
+
 ## [@anvilco/react-signature-modal@2.0.1](https://github.com/anvilco/react-ui/compare/@anvilco/react-signature-modal@2.0.1-alpha.0...@anvilco/react-signature-modal@2.0.1) - 2023-09-20
 
 ### Merged
@@ -200,29 +214,10 @@ All notable changes to this project will be documented in this file.
 
 ## [@anvilco/react-signature-modal@1.0.2-alpha.0](https://github.com/anvilco/react-ui/compare/@anvilco/react-signature-modal@1.0.0...@anvilco/react-signature-modal@1.0.2-alpha.0) - 2020-11-11
 
-## [@anvilco/react-signature-modal@1.0.0](https://github.com/anvilco/react-ui/compare/v0.0.0...@anvilco/react-signature-modal@1.0.0) - 2020-11-12
-
-## v0.0.0 - 2024-05-02
-
-### Merged
-
-- Add className prop and type [`#22`](https://github.com/anvilco/react-ui/pull/22)
-- publish better [`#20`](https://github.com/anvilco/react-ui/pull/20)
-- Add style prop and add postMessage helper [`#19`](https://github.com/anvilco/react-ui/pull/19)
-- [Breaking] Update dependencies [`#16`](https://github.com/anvilco/react-ui/pull/16)
-- Update readme to fix import error [`#15`](https://github.com/anvilco/react-ui/pull/15)
-- Add Typescript support to `AnvilEmbedFrame` [`#13`](https://github.com/anvilco/react-ui/pull/13)
-- New `@anvilco/anvil-embed-frame` package [`#12`](https://github.com/anvilco/react-ui/pull/12)
-- Update Readme [`#11`](https://github.com/anvilco/react-ui/pull/11)
-- [1-min] Fix output path for type defs [`#10`](https://github.com/anvilco/react-ui/pull/10)
-- Add Typescript typings [`#9`](https://github.com/anvilco/react-ui/pull/9)
-- Update dependencies and peer dependencies [`#7`](https://github.com/anvilco/react-ui/pull/7)
-- Add onError handler [`#6`](https://github.com/anvilco/react-ui/pull/6)
-- Add onFinishSigning prop & upgrade all minor version deps [`#5`](https://github.com/anvilco/react-ui/pull/5)
-- Refactor the Docs [`#3`](https://github.com/anvilco/react-ui/pull/3)
-- Review Follow Ups and Refactoring [`#2`](https://github.com/anvilco/react-ui/pull/2)
-- Setup Linting [`#1`](https://github.com/anvilco/react-ui/pull/1)
+## @anvilco/react-signature-modal@1.0.0 - 2020-11-12
 
 ### Commits
 
 - AnvilSignatureFrame and AnvilSignatureModal [`7ab8fc2`](https://github.com/anvilco/react-ui/commit/7ab8fc2026411cbcc0186d9650290ba3d1afcfa5)
+- publish config [`c3683cc`](https://github.com/anvilco/react-ui/commit/c3683ccb2dd12523ae85118d26307fc5ab2cd495)
+- add babel devDependencies [`51ce830`](https://github.com/anvilco/react-ui/commit/51ce830e44defc0615261f94a42e9b7bc156c4f4)
