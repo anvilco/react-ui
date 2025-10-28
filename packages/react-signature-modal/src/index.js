@@ -30,7 +30,8 @@ class AnvilSignatureModal extends React.Component {
   }
 
   componentDidMount() {
-    ReactModal.setAppElement(this.props.modalAppElement);
+    // defaults this prop here to avoid SSR issues in defaultProps
+    ReactModal.setAppElement(this.props.modalAppElement || document.body);
   }
 
   render() {
@@ -88,7 +89,6 @@ class AnvilSignatureModal extends React.Component {
 
 AnvilSignatureModal.defaultProps = {
   isOpen: false,
-  modalAppElement: document.body,
   showIconClose: true,
   anvilFrameProps: {},
   iconCloseProps: {},
