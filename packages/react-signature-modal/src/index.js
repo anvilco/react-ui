@@ -1,10 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import ReactModal from 'react-modal'
+import React from "react";
+import PropTypes from "prop-types";
+import ReactModal from "react-modal";
 
-import AnvilEmbedFrame from '../../anvil-embed-frame/src/index.js'
-import IconClose from './components/IconClose.js'
-import './styles.css'
+import AnvilEmbedFrame from "../../anvil-embed-frame/src/index.js";
+import IconClose from "./components/IconClose.js";
+import "./styles.css";
 
 /**
  * @typedef Props
@@ -25,12 +25,15 @@ import './styles.css'
  * @extends React.Component<Props>
  */
 class AnvilSignatureModal extends React.Component {
-  constructor (props) {
-    super(props)
-    ReactModal.setAppElement(this.props.modalAppElement)
+  constructor(props) {
+    super(props);
   }
 
-  render () {
+  componentDidMount() {
+    ReactModal.setAppElement(this.props.modalAppElement);
+  }
+
+  render() {
     const {
       id,
       iframeURL,
@@ -43,7 +46,7 @@ class AnvilSignatureModal extends React.Component {
       anvilFrameProps,
       iconCloseProps,
       ...otherProps
-    } = this.props
+    } = this.props;
 
     return (
       <ReactModal
@@ -71,14 +74,15 @@ class AnvilSignatureModal extends React.Component {
           onEvent={onEvent}
           anvilURL={anvilURL}
         />
-        {showIconClose &&
+        {showIconClose && (
           <IconClose
             className="anvil-delete-icon"
             {...iconCloseProps}
             onClick={onClose}
-          />}
+          />
+        )}
       </ReactModal>
-    )
+    );
   }
 }
 
@@ -88,8 +92,8 @@ AnvilSignatureModal.defaultProps = {
   showIconClose: true,
   anvilFrameProps: {},
   iconCloseProps: {},
-  id: 'anvil-signature-modal',
-}
+  id: "anvil-signature-modal",
+};
 
 AnvilSignatureModal.propTypes = {
   id: PropTypes.string,
@@ -106,6 +110,6 @@ AnvilSignatureModal.propTypes = {
   showIconClose: PropTypes.bool,
   anvilFrameProps: PropTypes.object,
   iconCloseProps: PropTypes.object,
-}
+};
 
-export default AnvilSignatureModal
+export default AnvilSignatureModal;
