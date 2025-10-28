@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v2.1.3](https://github.com/anvilco/react-ui/compare/v2.1.2...v2.1.3) - 2025-10-28
+
+### Commits
+
+- set document inside component did mount [`5a055ed`](https://github.com/anvilco/react-ui/commit/5a055edfd2d5dcef9d3b6c4b8d6dd4a8fd1def77)
+
 ## [v2.1.2](https://github.com/anvilco/react-ui/compare/@anvilco/react-signature-modal@2.1.1...v2.1.2) - 2025-10-27
 
 ## [@anvilco/react-signature-modal@2.1.1](https://github.com/anvilco/react-ui/compare/v2.1.1...@anvilco/react-signature-modal@2.1.1) - 2025-10-27
