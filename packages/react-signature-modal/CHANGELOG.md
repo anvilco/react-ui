@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v2.1.2](https://github.com/anvilco/react-ui/compare/@anvilco/react-signature-modal@2.1.1...v2.1.2) - 2025-10-27
+
 ## [@anvilco/react-signature-modal@2.1.1](https://github.com/anvilco/react-ui/compare/v2.1.1...@anvilco/react-signature-modal@2.1.1) - 2025-10-27
 
 ### Merged
