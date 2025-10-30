@@ -2,7 +2,41 @@
 
 All notable changes to this project will be documented in this file.
 
-## [v2.1.1](https://github.com/anvilco/react-ui/compare/@anvilco/react-signature-frame@1.9.0...v2.1.1) - 2024-04-17
+## [v2.1.4](https://github.com/anvilco/react-ui/compare/v2.1.3...v2.1.4) - 2025-10-28
+
+### Commits
+
+- being extra cautious [`02beb3c`](https://github.com/anvilco/react-ui/commit/02beb3c650dc774a84cf96166e38eaee5f17b0ca)
+
+## [v2.1.3](https://github.com/anvilco/react-ui/compare/v2.1.2...v2.1.3) - 2025-10-28
+
+### Commits
+
+- set document inside component did mount [`5a055ed`](https://github.com/anvilco/react-ui/commit/5a055edfd2d5dcef9d3b6c4b8d6dd4a8fd1def77)
+
+## [v2.1.2](https://github.com/anvilco/react-ui/compare/v2.1.1...v2.1.2) - 2025-10-27
+
+### Merged
+
+- iframeURL instead of signURL [`#25`](https://github.com/anvilco/react-ui/pull/25)
+- Add className prop and type [`#22`](https://github.com/anvilco/react-ui/pull/22)
+- publish better [`#20`](https://github.com/anvilco/react-ui/pull/20)
+
+### Commits
+
+- fix up packaging [`74ce1cb`](https://github.com/anvilco/react-ui/commit/74ce1cb7a77295545ef89b6f43777e874ec5ce60)
+
+## [v2.1.1](https://github.com/anvilco/react-ui/compare/@anvilco/react-signature-frame@1.9.1...v2.1.1) - 2024-04-17
+
+## [@anvilco/react-signature-frame@1.9.1](https://github.com/anvilco/react-ui/compare/@anvilco/react-signature-frame@1.9.0...@anvilco/react-signature-frame@1.9.1) - 2025-10-27
+
+### Merged
+
+- iframeURL instead of signURL [`#25`](https://github.com/anvilco/react-ui/pull/25)
+
+### Commits
+
+- fix up packaging [`74ce1cb`](https://github.com/anvilco/react-ui/commit/74ce1cb7a77295545ef89b6f43777e874ec5ce60)
 
 ## [@anvilco/react-signature-frame@1.9.0](https://github.com/anvilco/react-ui/compare/@anvilco/react-signature-frame@1.8.3...@anvilco/react-signature-frame@1.9.0) - 2024-05-02
 
