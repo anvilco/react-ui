@@ -1,6 +1,6 @@
 {
   "name": "@anvilco/anvil-embed-frame",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "The AnvilEmbedFrame React component for embedded Etch signatures and Workflows.",
   "author": "Anvil Foundry Inc.",
   "license": "MIT",
