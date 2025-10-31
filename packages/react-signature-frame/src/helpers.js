@@ -4,7 +4,7 @@
  * @param {boolean} [options.forceManualParse]
  * @returns {Object}
  */
-export function parseURLParams(searchStr, options = {}) {
+export function parseURLParams (searchStr, options = {}) {
   searchStr = searchStr || ''
   if (typeof searchStr !== 'string') return {}
   searchStr = searchStr.trim()
@@ -46,7 +46,7 @@ export function parseURLParams(searchStr, options = {}) {
  * @param {String[]} keysToOmit
  * @returns {*}
  */
-export function omit(object, keysToOmit) {
+export function omit (object, keysToOmit) {
   const ret = { ...object }
   if (keysToOmit && keysToOmit.length) {
     for (const path of keysToOmit) {

@@ -22,18 +22,18 @@ const IGNORED_KEYS = ['token']
  * @extends React.Component<Props>
  */
 class AnvilSignatureFrame extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.iframeRef = React.createRef()
   }
 
-  componentDidMount() {
+  componentDidMount () {
     const { scroll } = this.props
     window.addEventListener('message', this.handleSignFinish)
     if (scroll) this.iframeRef.current.scrollIntoView({ behavior: scroll })
   }
 
-  componentWillUnmount() {
+  componentWillUnmount () {
     window.removeEventListener('message', this.handleSignFinish)
   }
 
@@ -65,7 +65,7 @@ class AnvilSignatureFrame extends React.Component {
     }
   }
 
-  render() {
+  render () {
     const {
       signURL,
       onLoad,

@@ -25,16 +25,12 @@ import './styles.css'
  * @extends React.Component<Props>
  */
 class AnvilSignatureModal extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
-  componentDidMount() {
+  componentDidMount () {
     // defaults this prop here to avoid SSR issues in defaultProps
     ReactModal.setAppElement(this.props.modalAppElement || document.body)
   }
 
-  render() {
+  render () {
     const {
       id,
       iframeURL,
