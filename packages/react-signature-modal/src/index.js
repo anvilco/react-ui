@@ -1,10 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import ReactModal from "react-modal";
+import React from 'react'
+import PropTypes from 'prop-types'
+import ReactModal from 'react-modal'
 
-import AnvilEmbedFrame from "../../anvil-embed-frame/src/index.js";
-import IconClose from "./components/IconClose.js";
-import "./styles.css";
+import AnvilEmbedFrame from '../../anvil-embed-frame/src/index.js'
+import IconClose from './components/IconClose.js'
+import './styles.css'
 
 /**
  * @typedef Props
@@ -26,12 +26,12 @@ import "./styles.css";
  */
 class AnvilSignatureModal extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
   }
 
   componentDidMount() {
     // defaults this prop here to avoid SSR issues in defaultProps
-    ReactModal.setAppElement(this.props.modalAppElement || document.body);
+    ReactModal.setAppElement(this.props.modalAppElement || document.body)
   }
 
   render() {
@@ -47,7 +47,7 @@ class AnvilSignatureModal extends React.Component {
       anvilFrameProps,
       iconCloseProps,
       ...otherProps
-    } = this.props;
+    } = this.props
 
     return (
       <ReactModal
@@ -83,7 +83,7 @@ class AnvilSignatureModal extends React.Component {
           />
         )}
       </ReactModal>
-    );
+    )
   }
 }
 
@@ -92,8 +92,8 @@ AnvilSignatureModal.defaultProps = {
   showIconClose: true,
   anvilFrameProps: {},
   iconCloseProps: {},
-  id: "anvil-signature-modal",
-};
+  id: 'anvil-signature-modal',
+}
 
 AnvilSignatureModal.propTypes = {
   id: PropTypes.string,
@@ -110,6 +110,6 @@ AnvilSignatureModal.propTypes = {
   showIconClose: PropTypes.bool,
   anvilFrameProps: PropTypes.object,
   iconCloseProps: PropTypes.object,
-};
+}
 
-export default AnvilSignatureModal;
+export default AnvilSignatureModal

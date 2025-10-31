@@ -15,18 +15,18 @@ import PropTypes from 'prop-types'
  * @extends React.Component<Props>
  */
 class AnvilEmbedFrame extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.iframeRef = React.createRef()
   }
 
-  componentDidMount () {
+  componentDidMount() {
     const { scroll } = this.props
     if (scroll) this.iframeRef.current.scrollIntoView({ behavior: scroll })
     window.addEventListener('message', this.handleEvent)
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     window.removeEventListener('message', this.handleEvent)
   }
 
@@ -47,8 +47,16 @@ class AnvilEmbedFrame extends React.Component {
     }
   }
 
-  render () {
-    const { iframeURL, onEvent, anvilURL, scroll, style, className, ...others } = this.props
+  render() {
+    const {
+      iframeURL,
+      onEvent,
+      anvilURL,
+      scroll,
+      style,
+      className,
+      ...others
+    } = this.props
     return (
       <iframe
         id="anvil-embed-frame"

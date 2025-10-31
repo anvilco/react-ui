@@ -4,7 +4,7 @@
  * @param {boolean} [options.forceManualParse]
  * @returns {Object}
  */
-export function parseURLParams (searchStr, options = {}) {
+export function parseURLParams(searchStr, options = {}) {
   searchStr = searchStr || ''
   if (typeof searchStr !== 'string') return {}
   searchStr = searchStr.trim()
@@ -19,9 +19,17 @@ export function parseURLParams (searchStr, options = {}) {
     }
   } else if (searchStr) {
     // IE does not support URLSearchParams, so this
-    const parsableString = searchStr.indexOf('=') > -1 ? searchStr : searchStr + '='
+    const parsableString =
+      searchStr.indexOf('=') > -1 ? searchStr : searchStr + '='
     try {
-      params = JSON.parse('{"' + parsableString.replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}')
+      params = JSON.parse(
+        '{"' +
+          parsableString
+            .replace(/"/g, '\\"')
+            .replace(/&/g, '","')
+            .replace(/=/g, '":"') +
+          '"}'
+      )
     } catch (e) {
       console.warn(e)
       console.warn('Could not parse params from', parsableString)
@@ -38,7 +46,7 @@ export function parseURLParams (searchStr, options = {}) {
  * @param {String[]} keysToOmit
  * @returns {*}
  */
-export function omit (object, keysToOmit) {
+export function omit(object, keysToOmit) {
   const ret = { ...object }
   if (keysToOmit && keysToOmit.length) {
     for (const path of keysToOmit) {
