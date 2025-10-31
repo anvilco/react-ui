@@ -48,7 +48,15 @@ class AnvilEmbedFrame extends React.Component {
   }
 
   render () {
-    const { iframeURL, onEvent, anvilURL, scroll, style, className, ...others } = this.props
+    const {
+      iframeURL,
+      onEvent,
+      anvilURL,
+      scroll,
+      style,
+      className,
+      ...others
+    } = this.props
     return (
       <iframe
         id="anvil-embed-frame"

@@ -52,7 +52,8 @@ class AnvilSignatureFrame extends React.Component {
 
       const searchStr = data.split('?')[1]
       const payload = omit(parseURLParams(searchStr), IGNORED_KEYS)
-      const hasError = payload.action === 'signerError' || payload.error || payload.errorType
+      const hasError =
+        payload.action === 'signerError' || payload.error || payload.errorType
       if (!payload.action) {
         payload.action = hasError ? 'signerError' : 'signerComplete'
       }
@@ -66,8 +67,13 @@ class AnvilSignatureFrame extends React.Component {
 
   render () {
     const {
-      signURL, onLoad, enableDefaultStyles,
-      anvilURL, onError, onFinish, onFinishSigning, // ignore these props here.
+      signURL,
+      onLoad,
+      enableDefaultStyles,
+      anvilURL,
+      onError,
+      onFinish,
+      onFinishSigning, // ignore these props here.
       ...otherProps
     } = this.props
     const { iframeWarningProps, ...anvilFrameProps } = otherProps
@@ -76,20 +82,24 @@ class AnvilSignatureFrame extends React.Component {
         id="anvil-signature-frame"
         name="Anvil Etch E-Sign"
         title="Anvil Etch E-Sign"
-        style={enableDefaultStyles
-          ? {
-              width: '80vw',
-              height: '85vh',
-              maxWidth: '1200px',
-              borderStyle: 'groove',
-            }
-          : undefined}
+        style={
+          enableDefaultStyles
+            ? {
+                width: '80vw',
+                height: '85vh',
+                maxWidth: '1200px',
+                borderStyle: 'groove',
+              }
+            : undefined
+        }
         {...anvilFrameProps}
         src={signURL + '&withinIframe=true'}
         onLoad={onLoad}
         ref={this.iframeRef}
       >
-        <p className="anvil-iframe-warning" {...iframeWarningProps}>Your browser does not support iframes.</p>
+        <p className="anvil-iframe-warning" {...iframeWarningProps}>
+          Your browser does not support iframes.
+        </p>
       </iframe>
     )
   }

@@ -6,6 +6,9 @@
   ],
   "scripts": {
     "lint": "yarn eslint 'packages/*/src/**.js'",
+    "prettify": "prettier 'packages/*/src/**.js'",
+    "prettify:check": "yarn prettify --check",
+    "prettify:write": "yarn prettify --write",
     "test": "yarn lerna run test",
     "prebuild": "git clean -fdx packages -e packages/*/node_modules",
     "build": "yarn && yarn lerna run build",
@@ -49,6 +52,7 @@
     "lerna": "^7.3.0",
     "mini-css-extract-plugin": "^2.7.6",
     "mocha": "^10.2.0",
+    "prettier": "3.6.2",
     "sinon": "^16.0.0",
     "sinon-chai": "^3.7.0",
     "style-loader": "^3.3.3",

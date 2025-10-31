@@ -10,11 +10,11 @@ jobs:
     env:
       NODE_ENV: test
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - uses: actions/setup-node@v1
         with:
-          node-version: 18
-      - uses: actions/cache@v2
+          node-version: 20
+      - uses: actions/cache@v4
         id: yarn-cache
         with:
           path: node_modules
@@ -28,11 +28,11 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - uses: actions/setup-node@v1
         with:
-          node-version: 18
-      - uses: actions/cache@v2
+          node-version: 20
+      - uses: actions/cache@v4
         id: yarn-cache
         with:
           path: node_modules
@@ -46,11 +46,11 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - uses: actions/setup-node@v1
         with:
-          node-version: 18
-      - uses: actions/cache@v2
+          node-version: 20
+      - uses: actions/cache@v4
         id: yarn-cache
         with:
           path: node_modules

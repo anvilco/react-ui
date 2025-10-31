@@ -1,6 +1,6 @@
 {
   "name": "@anvilco/react-signature-modal",
-  "version": "2.1.0",
+  "version": "2.1.4",
   "description": "The AnvilSignatureModal React component for embedded Etch signatures",
   "author": "Anvil Foundry Inc.",
   "license": "MIT",
@@ -9,8 +9,17 @@
   "scripts": {
     "build": "tsc && webpack --mode production",
     "build:changelog": "yarn auto-changelog",
+    "clean": "rimraf dist",
+    "clean:build": "yarn clean && yarn build",
+    "prepack": "yarn clean:build",
     "pack": "yarn pack",
     "version": "yarn build:changelog && git add CHANGELOG.md"
+  },
+  "files": [
+    "dist/**"
+  ],
+  "engines": {
+    "node": "*"
   },
   "repository": {
     "type": "git",
@@ -53,6 +62,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-modal": "^3.14.4",
+    "rimraf": "6.0.1",
     "typescript": "^5.2.2",
     "webpack": "^5.70.0",
     "webpack-cli": "^5.1.4"

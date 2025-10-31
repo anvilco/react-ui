@@ -25,9 +25,9 @@ import './styles.css'
  * @extends React.Component<Props>
  */
 class AnvilSignatureModal extends React.Component {
-  constructor (props) {
-    super(props)
-    ReactModal.setAppElement(this.props.modalAppElement)
+  componentDidMount () {
+    // defaults this prop here to avoid SSR issues in defaultProps
+    ReactModal.setAppElement(this.props.modalAppElement || document.body)
   }
 
   render () {
@@ -71,12 +71,13 @@ class AnvilSignatureModal extends React.Component {
           onEvent={onEvent}
           anvilURL={anvilURL}
         />
-        {showIconClose &&
+        {showIconClose && (
           <IconClose
             className="anvil-delete-icon"
             {...iconCloseProps}
             onClick={onClose}
-          />}
+          />
+        )}
       </ReactModal>
     )
   }
@@ -84,7 +85,6 @@ class AnvilSignatureModal extends React.Component {
 
 AnvilSignatureModal.defaultProps = {
   isOpen: false,
-  modalAppElement: document.body,
   showIconClose: true,
   anvilFrameProps: {},
   iconCloseProps: {},

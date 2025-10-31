@@ -19,9 +19,17 @@ export function parseURLParams (searchStr, options = {}) {
     }
   } else if (searchStr) {
     // IE does not support URLSearchParams, so this
-    const parsableString = searchStr.indexOf('=') > -1 ? searchStr : searchStr + '='
+    const parsableString =
+      searchStr.indexOf('=') > -1 ? searchStr : searchStr + '='
     try {
-      params = JSON.parse('{"' + parsableString.replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}')
+      params = JSON.parse(
+        '{"' +
+          parsableString
+            .replace(/"/g, '\\"')
+            .replace(/&/g, '","')
+            .replace(/=/g, '":"') +
+          '"}'
+      )
     } catch (e) {
       console.warn(e)
       console.warn('Could not parse params from', parsableString)
